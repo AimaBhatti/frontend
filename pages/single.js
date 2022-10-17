@@ -1,12 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import Newsletter from '../components/Newsletter'
 
 export default function single() {
     return (
         <div>
             <Head>
-                <title>Bootie | Single</title>
+                <title>Bagagge | Single</title>
             </Head>
 
             <ol className="breadcrumb">
@@ -16,75 +17,167 @@ export default function single() {
                 <li className="breadcrumb-item active">Single Page</li>
             </ol>
 
-            <section className="ab-info-main py-md-5">
-                <div className="container py-md-3">
-                    <h3 className="tittle text-center mb-lg-5 mb-3"> Single Page</h3>
-                    <div className="speak px-lg-5">
-                        <div className="row mt-lg-5 mt-4">
-                            <div className="col-md-12 events-img">
-                                <img src="images/single.jpg" className="img-fluid" alt="user-image" />
+            <section className="banner-bottom py-5">
+                <div className="container py-md-5">
+                    {/* <!-- product right --> */}
+                    <div className="left-ads-display wthree">
+                        <div className="row">
+                            <div className="desc1-left col-md-6">
+                                <img src="images/bag1.png" className="img-fluid" alt="" />
                             </div>
-                            <div className="col-md-12 events-info my-3">
-                                <h3><span className="sub-tittle">01</span> Tech beauty</h3>
-                                <h4 className="my-3"><a href="#" className="text-dark">VIVAMUS ID TEMPOR FELIS. CRAS SAGITTIS MI SIT AMET</a></h4>
-                                <p>Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s.</p>
-                            </div>
-                            <p>Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat..</p>
-                            <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat..</p>
-                        </div>
-                        <div className="row my-lg-5 my-3">
-                            <div className="col-md-6 text-info">
-                                <p>Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor elementum id enim volutpat...</p>
-                            </div>
-                            <div className="col-md-6 team-img">
-                                <img src="images/img6.jpg" className="img-fluid" alt="user-image" />
-                            </div>
-                        </div>
-                        <div className="single-form-left">
-                            {/* <!-- contact form grid --> */}
-                            <div className="contact-single">
-                                <h3><span className="sub-tittle">01</span> Leave a Reply</h3>
-                                <form action="#" method="get" className="mt-4">
-                                    <div className="form-group">
-                                        <label htmlFor="contactcomment">Your Comment *</label>
-                                        <textarea className="form-control border" rows="5" id="contactcomment" required=""></textarea>
-                                    </div>
-                                    <div className="d-sm-flex">
-                                        <div className="col-sm-6 form-group p-0">
-                                            <label htmlFor="contactusername">Name *</label>
-                                            <input type="text" className="form-control border" id="contactusername" required="" />
-                                        </div>
-                                        <div className="col-sm-6 form-group ml-sm-3">
-                                            <label htmlFor="contactemail">Email *</label>
-                                            <input type="email" className="form-control border" id="contactemail" required="" />
+                            <div className="desc1-right col-md-6 pl-lg-3">
+                                <h3>Lorem ipsum dolor sit amet laoret.</h3>
+                                <h5>Rs. 499 <span>599</span> <a href="#">Click for offer</a></h5>
+                                <div className="available mt-3">
+                                    <form action="#" method="post" className="w3pvt-newsletter subscribe-sec">
+                                        <input type="email" name="Email" placeholder="Enter your email..." required="" />
+                                        <button className="btn submit">Check</button>
+
+                                    </form>
+                                    <span><a href="#">login to save in wishlist </a></span>
+                                    <p>Lorem Ipsum has been the industry's standard since the 1500s. Praesent ullamcorper dui turpis.. </p>
+                                </div>
+                                <div className="share-desc mt-5">
+                                    <div className="share text-left">
+                                        <h4>Share Product :</h4>
+                                        <div className="social-ficons mt-4">
+                                            <ul>
+                                                <li><a href="#"><span className="fa fa-facebook"></span> Facebook</a></li>
+                                                <li><a href="#"><span className="fa fa-twitter"></span> Twitter</a></li>
+                                                <li><a href="#"><span className="fa fa-google"></span>Google</a></li>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <button type="submit" className="mt-3 btn btn-success btn-block py-3">Post Comment</button>
-                                </form>
+                                    <div className="clearfix"></div>
+                                </div>
                             </div>
-                            {/* <!--  //contact form grid ends here --> */}
+
+
                         </div>
-                        <div className="media py-5">
-                            <img src="images/te2.jpg" className="mr-3 img-fluid rounded-circle" alt="image" />
-                            <div className="media-body">
-                                <h5 className="mt-0">Daniel Doe</h5>
-                                <p className="mt-2">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                                </p>
-                                <div className="media mt-5">
-                                    <a className="pr-3" href="#">
-                                        <img src="images/te1.jpg" className="img-fluid rounded-circle" alt="image" />
-                                    </a>
-                                    <div className="media-body">
-                                        <h5 className="mt-0">Leia Organa</h5>
-                                        <p className="mt-2"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla..</p>
+                        <div className="row sub-para-w3pvt my-5">
+
+                            <h3 className="shop-sing">Lorem ipsum dolor sit amet</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
+                            <p className="mt-3 italic-blue">Consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
+                            <p className="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
+                        </div>
+
+
+                        {/* <!--/row--> */}
+                        <h3 className="title-wthree-single my-lg-5 my-4 text-left">Featured Bags</h3>
+                        <div className="row shop-wthree-info text-center">
+                            <div className="col-md-3 shop-info-grid text-center mt-4">
+                                <div className="product-shoe-info shoe">
+                                    <div className="men-thumb-item">
+                                        <img src="images/b1.jpg" className="img-fluid" alt="" />
+
+                                    </div>
+                                    <div className="item-info-product">
+                                        <h4>
+                                            <a href="single.html">Messenger Bag </a>
+                                        </h4>
+
+                                        <div className="product_price">
+                                            <div className="grid-price">
+                                                <span className="money"><span className="line">$799</span> $675.00</span>
+                                            </div>
+                                        </div>
+                                        <ul className="stars">
+                                            <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
+                            <div className="col-md-3 shop-info-grid text-center mt-4">
+                                <div className="product-shoe-info shoe">
+                                    <div className="men-thumb-item">
+                                        <img src="images/b2.jpg" className="img-fluid" alt="" />
+
+                                    </div>
+                                    <div className="item-info-product">
+                                        <h4>
+                                            <a href="single.html">Shoulder Bag (Pink) </a>
+                                        </h4>
+
+                                        <div className="product_price">
+                                            <div className="grid-price">
+                                                <span className="money"><span className="line">$799</span> $675.00</span>
+                                            </div>
+                                        </div>
+                                        <ul className="stars">
+                                            <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-3 shop-info-grid text-center mt-4">
+                                <div className="product-shoe-info shoe">
+                                    <div className="men-thumb-item">
+                                        <img src="images/b3.jpg" className="img-fluid" alt="" />
+
+                                    </div>
+                                    <div className="item-info-product">
+                                        <h4>
+                                            <a href="single.html">Sling Bag </a>
+                                        </h4>
+
+                                        <div className="product_price">
+                                            <div className="grid-price">
+                                                <span className="money"><span className="line">$599</span> $475.00</span>
+                                            </div>
+                                        </div>
+                                        <ul className="stars">
+                                            <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-3 shop-info-grid text-center mt-4">
+                                <div className="product-shoe-info shoe">
+                                    <div className="men-thumb-item">
+                                        <img src="images/b4.jpg" className="img-fluid" alt="" />
+
+                                    </div>
+                                    <div className="item-info-product">
+                                        <h4>
+                                            <a href="single.html">Tote (Blue) </a>
+                                        </h4>
+
+                                        <div className="product_price">
+                                            <div className="grid-price">
+                                                <span className="money"><span className="line">$799</span> $675.00</span>
+                                            </div>
+                                        </div>
+                                        <ul className="stars">
+                                            <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
+                                            <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+                        {/* <!--//row--> */}
 
                     </div>
                 </div>
             </section>
+            <Newsletter />
         </div>
     )
 }

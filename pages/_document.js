@@ -22,24 +22,26 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    {/* <script>
-                        addEventListener("load", function() {
-                            setTimeout(hideURLbar, 0)
-                        }, false);
-
-                        function hideURLbar() {
-                            window.scrollTo(0, 1)
-                        }
-                    </script> */}
                     <link rel="stylesheet" href="css/bootstrap.css" />
+                    {/* <!-- Bootstrap-Core-CSS --> */}
                     <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+                    {/* <!-- font-awesome-icons --> */}
                     <link href="css/font-awesome.css" rel="stylesheet" />
-                    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700" rel="stylesheet" />
-                    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet" />
+                    {/* <!-- /Fonts --> */}
+                    <link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" />
                 </Head>
                 <body>
                     <Main />
                     <NextScript />
+                    {/* <script>
+                        function hideURLbar() {
+                            window.scrollTo(0, 1)
+                        }
+
+                        addEventListener("load", function() {
+                            setTimeout(hideURLbar, 0)
+                        }, false);
+                    </script> */}
                 </body>
             </Html>
         )

@@ -1,12 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import Newsletter from '../components/Newsletter'
 
 export default function contact() {
     return (
         <div>
             <Head>
-                <title>Bootie | Contact</title>
+                <title>Baggage | Contact</title>
             </Head>
 
             <ol className="breadcrumb">
@@ -16,51 +17,74 @@ export default function contact() {
                 <li className="breadcrumb-item active">Contact Us</li>
             </ol>
 
-            <section className="ab-info-main py-5">
-                <div className="container py-3">
-                    <h3 className="tittle text-center"><span className="sub-tittle">Find Us</span> Contact Us</h3>
-                    <div className="row contact-main-info mt-5">
-                        <div className="col-md-6 contact-right-content">
-                            <form action="#" method="post">
-                                <input type="text" name="Name" placeholder="Name" required="" />
-                                <input type="email" className="email" name="Email" placeholder="Email" required="" />
-                                <input type="text" name="Phone no" placeholder="Phone" required="" />
-                                <textarea name="Message" placeholder="Message" required=""></textarea>
-                                <div className="read mt-3">
-                                    <input type="submit" value="Submit" />
-                                </div>
-                            </form>
+            <section className="banner-bottom py-5">
+                <div className="container py-md-5">
+                    <h3 className="title-wthree mb-lg-5 mb-4 text-center">Contact Us </h3>
+                    <div className="row contact_information">
+                        <div className="col-md-6">
+                            <div className="contact_right p-lg-5 p-4">
+                                <form action="#" method="post">
+                                    <div className="field-group">
+
+                                        <div className="content-input-field">
+                                            <input name="text1" id="text1" type="text" placeholder="User Name" required="" />
+                                        </div>
+                                    </div>
+                                    <div className="field-group">
+
+                                        <div className="content-input-field">
+                                            <input name="text1" id="text1" type="email" placeholder="User Email" required="" />
+                                        </div>
+                                    </div>
+                                    <div className="field-group">
+
+                                        <div className="content-input-field">
+                                            <input name="text1" id="text3" type="text" placeholder="User Phone" required="" />
+                                        </div>
+                                    </div>
+                                    <div className="field-group">
+                                        <div className="content-input-field">
+                                            <input name="password" id="myInput" type="Password" placeholder="Password" />
+                                        </div>
+                                    </div>
+                                    <div className="field-group">
+                                        <div className="content-input-field">
+                                            <textarea placeholder="Your Message Here..." required=""></textarea>
+                                        </div>
+                                    </div>
+                                    <div className="content-input-field">
+                                        <button type="submit" className="btn">Submit</button>
+                                    </div>
+
+                                </form>
+                            </div>
                         </div>
-                        <div className="col-md-6 contact-left-content">
-                            <div className="address-con">
-                                <h4 className="mb-2"><span className="fa fa-phone-square" aria-hidden="true"></span> Phone</h4>
-                                <p>+121 098 8907 9987</p>
-                                <p>+121 098 8907 9987</p>
-                            </div>
-                            <div className="address-con my-4">
-                                <h4 className="mb-2"><span className="fa fa-envelope-o" aria-hidden="true"></span> Email </h4>
-                                <p><a href="mailto:info@example.com">info@example.com</a></p>
-                                <p><a href="mailto:info@example.com">info@example.com</a></p>
-                            </div>
-                            <div className="address-con mb-4">
-                                <h4 className="mb-2"><span className="fa fa-fax" aria-hidden="true"></span> Fax</h4>
-
-                                <p>(800) 123-80088</p>
-                            </div>
-                            <div className="address-con">
-                                <h4 className="mb-2"><span className="fa fa-map-marker" aria-hidden="true"></span> Location </h4>
-
-                                <p>Honey Avenue, New York City</p>
-                            </div>
-
+                        <div className="col-md-6 contact_left p-4">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6350041.310790406!2d30.68773492426509!3d39.0014851732576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2sTurkey!5e0!3m2!1sen!2sin!4v1522753415269"></iframe>
                         </div>
 
-                    </div>
-                    <div className="map-fo mt-lg-5 mt-4">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27404345275!2d-118.69191921441556!3d34.02016130939095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos+Angeles%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1522474296007" allowfullscreen></iframe>
+                        <div className="col-lg-4 col-md-6 mt-lg-4 contact-inn-w3pvt">
+                            <div className="mt-5 information-wthree">
+                                <h4 className="text-uppercase mb-4"><span className="fa fa-comments"></span> Communication</h4>
+                                <p className="cont-wthree-para mb-3 text-capitalize">for general queries, including property Sales and constructions, please email us at <a href="mailto:info@example.com">info@example.com</a></p>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-md-6 mt-lg-4 contact-inn-w3pvt">
+                            <div className="mt-5 information-wthree">
+                                <h4 className="text-uppercase mb-4"><span className="fa fa-life-ring"></span> Technical Support</h4>
+                                <p className="cont-wthree-para mb-3 text-capitalize">we are ready to help! if you have any queries or issues, contact us for support <label>+12 388 455 6789</label>.</p>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-md-6 mt-lg-4 contact-inn-w3pvt">
+                            <div className="mt-5 information-wthree">
+                                <h4 className="text-uppercase mb-4"><span className="fa fa-map"></span> Others</h4>
+                                <p className="cont-wthree-para mb-3 text-capitalize">we are ready to help! if you have any queries or issues, contact us for support <label>+12 388 455 6789</label>.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
+            <Newsletter />
         </div>
     )
 }
