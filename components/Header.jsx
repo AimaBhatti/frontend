@@ -8,6 +8,7 @@ export default function Header() {
 					{/* <!-- nav --> */}
 					<div className="top-w3pvt d-flex">
 						<div id="logo">
+							<img src='logo.png' />
 							<h1> <a href="/"><span className="log-w3pvt">B</span>aggage</a> <label className="sub-des">Online Store</label></h1>
 						</div>
 
@@ -30,8 +31,7 @@ export default function Header() {
 									<a href="#">Dropdown <span className="fa fa-angle-down" aria-hidden="true"></span></a>
 									<input type="checkbox" id="drop-2" />
 									<ul>
-										<li><a href="/coming" className="drop-text">Services</a></li>
-										<li><a href="/about" className="drop-text">Features</a></li>
+										<li><a href="/about" className="drop-text">About</a></li>
 										<li><a href="/single" className="drop-text">Single Page</a></li>
 
 									</ul>

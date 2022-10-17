@@ -39,7 +39,7 @@ export default function login() {
                         </ul>
                         <ul className="list-login-bottom">
                             <li className="">
-                                <a href="register.html" className="">Don't have an Account?</a>
+                                <a href="/register" className="">Don't have an Account?</a>
                             </li>
                             <li className="">
                                 <a href="#" className="text-right">Need Help?</a>

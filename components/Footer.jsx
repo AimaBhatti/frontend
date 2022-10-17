@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function Footer() {
     return (
@@ -7,23 +8,23 @@ export default function Footer() {
                 <div className="container py-md-5">
                     <div className="row">
                         <div className="col-lg-3 footer_wthree_gridf mt-lg-5">
-                            <h2><a href="index.html"><span>B</span>aggage
+                            <h2><a href="/"><span>B</span>aggage
                             </a> </h2>
                             <label className="sub-des2">Online Store</label>
                         </div>
                         <div className="col-lg-3 footer_wthree_gridf mt-md-0 mt-4">
                             <ul className="footer_wthree_gridf_list">
                                 <li>
-                                    <a href="index.html"><span className="fa fa-angle-right" aria-hidden="true"></span> Home</a>
+                                    <a href="/"><span className="fa fa-angle-right" aria-hidden="true"></span> Home</a>
                                 </li>
                                 <li>
-                                    <a href="about.html"><span className="fa fa-angle-right" aria-hidden="true"></span> About</a>
+                                    <a href="/about"><span className="fa fa-angle-right" aria-hidden="true"></span> About</a>
                                 </li>
                                 <li>
-                                    <a href="shop.html"><span className="fa fa-angle-right" aria-hidden="true"></span> Shop</a>
+                                    <a href="/shop"><span className="fa fa-angle-right" aria-hidden="true"></span> Shop</a>
                                 </li>
                                 <li>
-                                    <a href="shop.html"><span className="fa fa-angle-right" aria-hidden="true"></span>Collections</a>
+                                    <a href="/shop"><span className="fa fa-angle-right" aria-hidden="true"></span>Collections</a>
                                 </li>
 
                             </ul>
@@ -31,17 +32,17 @@ export default function Footer() {
                         <div className="col-lg-3 footer_wthree_gridf mt-md-0 mt-sm-4 mt-3">
                             <ul className="footer_wthree_gridf_list">
                                 <li>
-                                    <a href="single.html"><span className="fa fa-angle-right" aria-hidden="true"></span> Extra Page</a>
+                                    <a href="/single"><span className="fa fa-angle-right" aria-hidden="true"></span> Extra Page</a>
                                 </li>
 
                                 <li>
                                     <a href="#"><span className="fa fa-angle-right" aria-hidden="true"></span> Terms & Conditions</a>
                                 </li>
                                 <li>
-                                    <a href="single.html"><span className="fa fa-angle-right" aria-hidden="true"></span> Shop Single</a>
+                                    <a href="/single"><span className="fa fa-angle-right" aria-hidden="true"></span> Shop Single</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html"><span className="fa fa-angle-right" aria-hidden="true"></span> Contact Us</a>
+                                    <a href="/contact"><span className="fa fa-angle-right" aria-hidden="true"></span> Contact Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -49,11 +50,11 @@ export default function Footer() {
                         <div className="col-lg-3 footer_wthree_gridf mt-md-0 mt-sm-4 mt-3">
                             <ul className="footer_wthree_gridf_list">
                                 <li>
-                                    <a href="login.html"><span className="fa fa-angle-right" aria-hidden="true"></span> Login </a>
+                                    <a href="/login"><span className="fa fa-angle-right" aria-hidden="true"></span> Login </a>
                                 </li>
 
                                 <li>
-                                    <a href="register.html"><span className="fa fa-angle-right" aria-hidden="true"></span>Register</a>
+                                    <a href="/register"><span className="fa fa-angle-right" aria-hidden="true"></span>Register</a>
                                 </li>
                                 <li>
                                     <a href="#"><span className="fa fa-angle-right" aria-hidden="true"></span>Privacy & Policy</a>
