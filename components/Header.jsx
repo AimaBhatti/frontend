@@ -9,7 +9,7 @@ export default function Header() {
 					{/* <!-- nav --> */}
 					<div className="top-w3pvt d-flex">
 						<div id="logo">
-							<Link href="/"><a><Image src='/logo.png' width={100} height={100} /></a></Link>
+							<Link href="/"><a><Image src='/logo.png' width={100} height={100} alt="logo" /></a></Link>
 							<h1>
 								<Link href="/"><a><span className="log-w3pvt">B</span>aggage</a></Link>
 								<label className="sub-des">Online Store</label>

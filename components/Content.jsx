@@ -76,14 +76,14 @@ export default function Content() {
                     <div className="col-lg-6 bottom-w3pvt-left p-lg-0">
                         <Image src="/images/ab1.jpg" width="800" height="450" className="img-fluid" alt="" />
                         <div className="pos-wthree">
-                            <h4 className="text-wthree">50% Off Any <br />Women's Bags</h4>
+                            <h4 className="text-wthree">50% Off Any <br />Women&#39;s Bags</h4>
                             <Link href="/shop"><a className="btn shop mt-3">Shop Now</a></Link>
                         </div>
                     </div>
                     <div className="col-lg-6 bottom-w3pvt-left bottom-w3pvt-right p-lg-0">
                         <Image src="/images/ab2.jpg" width="850" height="450" className="img-fluid" alt="" />
                         <div className="pos-w3pvt">
-                            <h4 className="text-w3pvt">30% Off Any <br />Men's Bags</h4>
+                            <h4 className="text-w3pvt">30% Off Any <br />Men&#39;s Bags</h4>
                             <Link href="/shop"><a className="btn shop mt-3">Shop Now</a></Link>
                         </div>
                     </div>

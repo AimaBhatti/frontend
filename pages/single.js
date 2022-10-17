@@ -36,7 +36,7 @@ export default function single() {
 
                                     </form>
                                     <span><Link href="#"><a>login to save in wishlist </a></Link></span>
-                                    <p>Lorem Ipsum has been the industry's standard since the 1500s. Praesent ullamcorper dui turpis.. </p>
+                                    <p>Lorem Ipsum has been the industry&#39;s standard since the 1500s. Praesent ullamcorper dui turpis.. </p>
                                 </div>
                                 <div className="share-desc mt-5">
                                     <div className="share text-left">

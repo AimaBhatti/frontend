@@ -40,7 +40,7 @@ export default function login() {
                         </ul>
                         <ul className="list-login-bottom">
                             <li className="">
-                                <Link href="/register"><a className="">Don't have an Account?</a></Link>
+                                <Link href="/register"><a className="">Don&#39;t have an Account?</a></Link>
                             </li>
                             <li className="">
                                 <Link href="#"><a className="text-right">Need Help?</a></Link>
