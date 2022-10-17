@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Content from '../components/Content'
 import Newsletter from '../components/Newsletter'
 import styles from '../styles/Home.module.css'

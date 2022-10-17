@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import Image from 'next/image'
 import Newsletter from '../components/Newsletter'
 
 export default function shop() {
@@ -25,12 +26,12 @@ export default function shop() {
                         <div className="col-lg-3 shop-info-grid text-center mt-4">
                             <div className="product-shoe-info shoe">
                                 <div className="men-thumb-item">
-                                    <img src="images/b1.jpg" className="img-fluid" alt="" />
+                                    <Image src="/images/b1.jpg" width={300} height={300} className="img-fluid" alt="" />
 
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <a href="single.html">Messenger Bag </a>
+                                        <Link href="/single">Messenger Bag </Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -39,11 +40,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -51,12 +52,12 @@ export default function shop() {
                         <div className="col-lg-3 shop-info-grid text-center mt-4">
                             <div className="product-shoe-info shoe">
                                 <div className="men-thumb-item">
-                                    <img src="images/b2.jpg" className="img-fluid" alt="" />
+                                    <Image src="/images/b2.jpg" width={300} height={300} className="img-fluid" alt="" />
 
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <a href="single.html">Shoulder Bag (Pink) </a>
+                                        <Link href="/single">Shoulder Bag (Pink) </Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -65,11 +66,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -77,12 +78,12 @@ export default function shop() {
                         <div className="col-lg-3 shop-info-grid text-center mt-4">
                             <div className="product-shoe-info shoe">
                                 <div className="men-thumb-item">
-                                    <img src="images/b3.jpg" className="img-fluid" alt="" />
+                                    <Image src="/images/b3.jpg" width={300} height={300} className="img-fluid" alt="" />
 
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <a href="single.html">Sling Bag </a>
+                                        <Link href="/single">Sling Bag </Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -91,11 +92,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -103,12 +104,12 @@ export default function shop() {
                         <div className="col-lg-3 shop-info-grid text-center mt-4">
                             <div className="product-shoe-info shoe">
                                 <div className="men-thumb-item">
-                                    <img src="images/b4.jpg" className="img-fluid" alt="" />
+                                    <Image src="/images/b4.jpg" width={300} height={300} className="img-fluid" alt="" />
 
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <a href="single.html">Tote (Blue) </a>
+                                        <Link href="/single">Tote (Blue) </Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -117,11 +118,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -134,12 +135,12 @@ export default function shop() {
                         <div className="col-lg-3 shop-info-grid text-center mt-4">
                             <div className="product-shoe-info shoe">
                                 <div className="men-thumb-item">
-                                    <img src="images/b5.jpg" className="img-fluid" alt="" />
+                                    <Image src="/images/b5.jpg" width={300} height={300} className="img-fluid" alt="" />
 
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <a href="single.html">Satchel (Yellow) </a>
+                                        <Link href="/single">Satchel (Yellow) </Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -148,11 +149,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -160,12 +161,12 @@ export default function shop() {
                         <div className="col-lg-3 shop-info-grid text-center mt-4">
                             <div className="product-shoe-info shoe">
                                 <div className="men-thumb-item">
-                                    <img src="images/b6.jpg" className="img-fluid" alt="" />
+                                    <Image src="/images/b6.jpg" width={300} height={300} className="img-fluid" alt="" />
 
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <a href="single.html">Shoulder Bag (Orange)</a>
+                                        <Link href="/single">Shoulder Bag (Orange)</Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -174,11 +175,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -186,12 +187,12 @@ export default function shop() {
                         <div className="col-lg-3 shop-info-grid text-center mt-4">
                             <div className="product-shoe-info shoe">
                                 <div className="men-thumb-item">
-                                    <img src="images/b8.jpg" className="img-fluid" alt="" />
+                                    <Image src="/images/b8.jpg" width={300} height={300} className="img-fluid" alt="" />
 
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <a href="single.html">Hobo (Blue) </a>
+                                        <Link href="/single">Hobo (Blue) </Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -200,11 +201,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -212,12 +213,12 @@ export default function shop() {
                         <div className="col-lg-3 shop-info-grid text-center mt-4">
                             <div className="product-shoe-info shoe">
                                 <div className="men-thumb-item">
-                                    <img src="images/b7.jpg" className="img-fluid" alt="" />
+                                    <Image src="/images/b7.jpg" width={300} height={300} className="img-fluid" alt="" />
 
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <a href="single.html">Satchel (Pink)</a>
+                                        <Link href="/single">Satchel (Pink)</Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -226,11 +227,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -245,12 +246,12 @@ export default function shop() {
                         <div className="col-lg-3 shop-info-grid text-center mt-4">
                             <div className="product-shoe-info shoe">
                                 <div className="men-thumb-item">
-                                    <img src="images/b3.jpg" className="img-fluid" alt="" />
+                                    <Image src="/images/b3.jpg" width={300} height={300} className="img-fluid" alt="" />
 
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <a href="single.html">Sling Bag </a>
+                                        <Link href="/single">Sling Bag </Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -259,11 +260,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -271,12 +272,12 @@ export default function shop() {
                         <div className="col-lg-3 shop-info-grid text-center mt-4">
                             <div className="product-shoe-info shoe">
                                 <div className="men-thumb-item">
-                                    <img src="images/b4.jpg" className="img-fluid" alt="" />
+                                    <Image src="/images/b4.jpg" width={300} height={300} className="img-fluid" alt="" />
 
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <a href="single.html">Tote (Blue) </a>
+                                        <Link href="/single">Tote (Blue) </Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -285,11 +286,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -299,12 +300,12 @@ export default function shop() {
                         <div className="col-lg-3 shop-info-grid text-center mt-4">
                             <div className="product-shoe-info shoe">
                                 <div className="men-thumb-item">
-                                    <img src="images/b1.jpg" className="img-fluid" alt="" />
+                                    <Image src="/images/b1.jpg" width={300} height={300} className="img-fluid" alt="" />
 
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <a href="single.html">Messenger Bag </a>
+                                        <Link href="/single">Messenger Bag </Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -313,11 +314,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -325,12 +326,12 @@ export default function shop() {
                         <div className="col-lg-3 shop-info-grid text-center mt-4">
                             <div className="product-shoe-info shoe">
                                 <div className="men-thumb-item">
-                                    <img src="images/b2.jpg" className="img-fluid" alt="" />
+                                    <Image src="/images/b2.jpg" width={300} height={300} className="img-fluid" alt="" />
 
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <a href="single.html">Shoulder Bag (Pink) </a>
+                                        <Link href="/single">Shoulder Bag (Pink) </Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -339,11 +340,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                        <li><a href="#"><span className="fa fa-star-o" aria-hidden="true"></span></a></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -354,19 +355,19 @@ export default function shop() {
                     <nav aria-label="Page navigation example mt-5">
                         <ul className="pagination">
                             <li className="page-item">
-                                <a className="page-link" href="#">Previous</a>
+                                <Link className="page-link" href="#">Previous</Link>
                             </li>
                             <li className="page-item">
-                                <a className="page-link" href="#">1</a>
+                                <Link className="page-link" href="#">1</Link>
                             </li>
                             <li className="page-item">
-                                <a className="page-link" href="#">2</a>
+                                <Link className="page-link" href="#">2</Link>
                             </li>
                             <li className="page-item">
-                                <a className="page-link" href="#">3</a>
+                                <Link className="page-link" href="#">3</Link>
                             </li>
                             <li className="page-item">
-                                <a className="page-link" href="#">Next</a>
+                                <Link className="page-link" href="#">Next</Link>
                             </li>
                         </ul>
                     </nav>

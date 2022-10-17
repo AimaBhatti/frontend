@@ -1,4 +1,6 @@
 import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Content() {
     return (
@@ -38,7 +40,7 @@ export default function Content() {
                         <div className="col-md-4 ab-content text-center p-lg-5 p-3 my-lg-5">
                             <h4>Travel Must Haves</h4>
                             <p>Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.</p>
-                            <a href="shop.html" className="btn shop mt-3">Shop Now</a>
+                            <Link href="/shop" className="btn shop mt-3">Shop Now</Link>
 
                         </div>
                     </div>
@@ -53,16 +55,16 @@ export default function Content() {
 
 
                         <div className="col-md-4 content-gd-wthree">
-                            <img src="images/c1.jpg" className="img-fluid" alt="" />
+                            <Image src="/images/c1.jpg" width="400" height="550" className="img-fluid" alt="" />
                         </div>
                         <div className="col-md-4 content-gd-wthree ab-content py-lg-5 my-lg-5">
                             <h4>Need Extra Space ?</h4>
                             <p>Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.</p>
-                            <a href="shop.html" className="btn shop mt-3">Shop Now</a>
+                            <Link href="/shop" className="btn shop mt-3">Shop Now</Link>
 
                         </div>
                         <div className="col-md-4 content-gd-wthree">
-                            <img src="images/c2.jpg" className="img-fluid" alt="" />
+                            <Image src="/images/c2.jpg" width="400" height="550" className="img-fluid" alt="" />
                         </div>
                     </div>
 
@@ -72,17 +74,17 @@ export default function Content() {
             <section className="mid-section">
                 <div className="d-lg-flex p-0">
                     <div className="col-lg-6 bottom-w3pvt-left p-lg-0">
-                        <img src="images/ab1.jpg" className="img-fluid" alt="" />
+                        <Image src="/images/ab1.jpg" width="800" height="450" className="img-fluid" alt="" />
                         <div className="pos-wthree">
                             <h4 className="text-wthree">50% Off Any <br />Women's Bags</h4>
-                            <a href="shop.html" className="btn shop mt-3">Shop Now</a>
+                            <Link href="/shop" className="btn shop mt-3">Shop Now</Link>
                         </div>
                     </div>
                     <div className="col-lg-6 bottom-w3pvt-left bottom-w3pvt-right p-lg-0">
-                        <img src="images/ab2.jpg" className="img-fluid" alt="" />
+                        <Image src="/images/ab2.jpg" width="850" height="450" className="img-fluid" alt="" />
                         <div className="pos-w3pvt">
                             <h4 className="text-w3pvt">30% Off Any <br />Men's Bags</h4>
-                            <a href="shop.html" className="btn shop mt-3">Shop Now</a>
+                            <Link href="/shop" className="btn shop mt-3">Shop Now</Link>
                         </div>
                     </div>
                 </div>
@@ -96,28 +98,28 @@ export default function Content() {
                         <div className="col-lg-4 gallery-content-info text-center mt-lg-5">
                             <h3 className="title-wthree mb-lg-5 mb-4">Trending Now </h3>
                             <p>Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.</p>
-                            <a href="shop.html" className="btn shop mt-3">Shop Now</a>
+                            <Link href="/shop" className="btn shop mt-3">Shop Now</Link>
 
                         </div>
                         <div className="col-lg-8 gallery-content">
                             <div className="row">
                                 <div className="col-md-4 col-sm-6 gal-img">
-                                    <a href="#gal1"><img src="images/g1.jpg" alt="Baggage" className="img-fluid mt-4" /></a>
+                                    <Link href="#gal1"><Image src="/images/g1.jpg" width="450" height="400" alt="Baggage" className="img-fluid mt-4" /></Link>
                                 </div>
                                 <div className="col-md-4 col-sm-6 gal-img">
-                                    <a href="#gal2"><img src="images/g2.jpg" alt="Baggage" className="img-fluid mt-4" /></a>
+                                    <Link href="#gal2"><Image src="/images/g2.jpg" width="450" height="400" alt="Baggage" className="img-fluid mt-4" /></Link>
                                 </div>
                                 <div className="col-md-4 col-sm-6 gal-img">
-                                    <a href="#gal3"><img src="images/g3.jpg" alt="Baggage" className="img-fluid mt-4" /></a>
+                                    <Link href="#gal3"><Image src="/images/g3.jpg" width="450" height="400" alt="Baggage" className="img-fluid mt-4" /></Link>
                                 </div>
                                 <div className="col-md-4 col-sm-6 gal-img">
-                                    <a href="#gal1"><img src="images/g4.jpg" alt="Baggage" className="img-fluid mt-4" /></a>
+                                    <Link href="#gal1"><Image src="/images/g4.jpg" width="450" height="400" alt="Baggage" className="img-fluid mt-4" /></Link>
                                 </div>
                                 <div className="col-md-4 col-sm-6 gal-img">
-                                    <a href="#gal2"><img src="images/g5.jpg" alt="Baggage" className="img-fluid mt-4" /></a>
+                                    <Link href="#gal2"><Image src="/images/g5.jpg" width="450" height="400" alt="Baggage" className="img-fluid mt-4" /></Link>
                                 </div>
                                 <div className="col-md-4 col-sm-6 gal-img">
-                                    <a href="#gal3"><img src="images/g6.jpg" alt="Baggage" className="img-fluid mt-4" /></a>
+                                    <Link href="#gal3"><Image src="/images/g6.jpg" width="450" height="400" alt="Baggage" className="img-fluid mt-4" /></Link>
                                 </div>
 
                             </div>
@@ -125,24 +127,24 @@ export default function Content() {
                             {/* <!-- popup--> */}
                             <div id="gal1" className="popup-effect">
                                 <div className="popup">
-                                    <img src="images/g1.jpg" alt="Popup image" className="img-fluid mt-4" />
-                                    <a className="close" href="#gallery">&times;</a>
+                                    <Image src="/images/g1.jpg" width="450" height="400" alt="Popup image" className="img-fluid mt-4" />
+                                    <Link className="close" href="#gallery">&times;</Link>
                                 </div>
                             </div>
                             {/* <!-- //popup --> */}
                             {/* <!-- popup--> */}
                             <div id="gal2" className="popup-effect">
                                 <div className="popup">
-                                    <img src="images/g2.jpg" alt="Popup image" className="img-fluid mt-4" />
-                                    <a className="close" href="#gallery">&times;</a>
+                                    <Image src="/images/g2.jpg" width="450" height="400" alt="Popup image" className="img-fluid mt-4" />
+                                    <Link className="close" href="#gallery">&times;</Link>
                                 </div>
                             </div>
                             {/* <!-- //popup --> */}
                             {/* <!-- popup--> */}
                             <div id="gal3" className="popup-effect">
                                 <div className="popup">
-                                    <img src="images/g3.jpg" alt="Popup image" className="img-fluid mt-4" />
-                                    <a className="close" href="#gallery">&times;</a>
+                                    <Image src="/images/g3.jpg" width="450" height="400" alt="Popup image" className="img-fluid mt-4" />
+                                    <Link className="close" href="#gallery">&times;</Link>
                                 </div>
                             </div>
                             {/* <!-- //popup --> */}

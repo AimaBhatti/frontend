@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 export default function Header() {
 	return (
 		<div className="main-sec inner-page">
@@ -8,13 +9,13 @@ export default function Header() {
 					{/* <!-- nav --> */}
 					<div className="top-w3pvt d-flex">
 						<div id="logo">
-							<img src='logo.png' />
-							<h1> <a href="/"><span className="log-w3pvt">B</span>aggage</a> <label className="sub-des">Online Store</label></h1>
+							<Image src='/logo.png' width={100} height={100} />
+							<h1> <Link href="/"><span className="log-w3pvt">B</span>aggage</Link> <label className="sub-des">Online Store</label></h1>
 						</div>
 
 						<div className="forms ml-auto">
-							<a href="/login" className="btn"><span className="fa fa-user-circle-o"></span> Sign In</a>
-							<a href="/register" className="btn"><span className="fa fa-pencil-square-o"></span> Sign Up</a>
+							<Link href="/login" className="btn"><span className="fa fa-user-circle-o"></span> Sign In</Link>
+							<Link href="/register" className="btn"><span className="fa fa-pencil-square-o"></span> Sign Up</Link>
 						</div>
 					</div>
 					<div className="nav-top-wthree">
@@ -22,23 +23,23 @@ export default function Header() {
 							<label htmlFor="drop" className="toggle"><span className="fa fa-bars"></span></label>
 							<input type="checkbox" id="drop" />
 							<ul className="menu">
-								<li className="active"><a href="/">Home</a></li>
-								<li><a href="/about">About Us</a></li>
+								<li className="active"><Link href="/">Home</Link></li>
+								<li><Link href="/about">About Us</Link></li>
 								<li>
 									{/* <!-- First Tier Drop Down --> */}
 									<label htmlFor="drop-2" className="toggle">Dropdown <span className="fa fa-angle-down" aria-hidden="true"></span>
 									</label>
-									<a href="#">Dropdown <span className="fa fa-angle-down" aria-hidden="true"></span></a>
+									<Link href="#">Dropdown <span className="fa fa-angle-down" aria-hidden="true"></span></Link>
 									<input type="checkbox" id="drop-2" />
 									<ul>
-										<li><a href="/about" className="drop-text">About</a></li>
-										<li><a href="/single" className="drop-text">Single Page</a></li>
+										<li><Link href="/about" className="drop-text">About</Link></li>
+										<li><Link href="/single" className="drop-text">Single Page</Link></li>
 
 									</ul>
 								</li>
 
-								<li><a href="/shop">Collections</a></li>
-								<li><a href="/contact">Contact</a></li>
+								<li><Link href="/shop">Collections</Link></li>
+								<li><Link href="/contact">Contact</Link></li>
 							</ul>
 						</nav>
 						{/* <!-- //nav --> */}

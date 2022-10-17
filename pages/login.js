@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function login() {
   return (
@@ -33,16 +34,16 @@ export default function login() {
                                 </label>
                             </li>
                             <li>
-                                <a href="#" className="text-right">Forgot password?</a>
+                                <Link href="#" className="text-right">Forgot password?</Link>
                             </li>
                             <li className="clearfix"></li>
                         </ul>
                         <ul className="list-login-bottom">
                             <li className="">
-                                <a href="/register" className="">Don't have an Account?</a>
+                                <Link href="/register" className="">Don't have an Account?</Link>
                             </li>
                             <li className="">
-                                <a href="#" className="text-right">Need Help?</a>
+                                <Link href="#" className="text-right">Need Help?</Link>
                             </li>
                             <li className="clearfix"></li>
                         </ul>

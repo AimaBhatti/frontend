@@ -66,7 +66,7 @@ export default function contact() {
                         <div className="col-lg-4 col-md-6 mt-lg-4 contact-inn-w3pvt">
                             <div className="mt-5 information-wthree">
                                 <h4 className="text-uppercase mb-4"><span className="fa fa-comments"></span> Communication</h4>
-                                <p className="cont-wthree-para mb-3 text-capitalize">for general queries, including property Sales and constructions, please email us at <a href="mailto:info@example.com">info@example.com</a></p>
+                                <p className="cont-wthree-para mb-3 text-capitalize">for general queries, including property Sales and constructions, please email us at <Link href="mailto:info@example.com">info@example.com</Link></p>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 mt-lg-4 contact-inn-w3pvt">

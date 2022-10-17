@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function register() {
   return (
@@ -38,7 +39,7 @@ export default function register() {
                         </div>
                         <div className="list-login-bottom text-center mt-lg-5 mt-4">
 
-                            <a href="#" className="">By clicking Signup, I agree to your terms</a>
+                            <Link href="#" className="">By clicking Signup, I agree to your terms</Link>
 
                         </div>
                     </form>
