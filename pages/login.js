@@ -34,16 +34,16 @@ export default function login() {
                                 </label>
                             </li>
                             <li>
-                                <Link href="#" className="text-right">Forgot password?</Link>
+                                <Link href="#"><a className="text-right">Forgot password?</a></Link>
                             </li>
                             <li className="clearfix"></li>
                         </ul>
                         <ul className="list-login-bottom">
                             <li className="">
-                                <Link href="/register" className="">Don't have an Account?</Link>
+                                <Link href="/register"><a className="">Don't have an Account?</a></Link>
                             </li>
                             <li className="">
-                                <Link href="#" className="text-right">Need Help?</Link>
+                                <Link href="#"><a className="text-right">Need Help?</a></Link>
                             </li>
                             <li className="clearfix"></li>
                         </ul>

@@ -38,9 +38,7 @@ export default function register() {
                             <button type="submit" className="btn">Sign Up</button>
                         </div>
                         <div className="list-login-bottom text-center mt-lg-5 mt-4">
-
-                            <Link href="#" className="">By clicking Signup, I agree to your terms</Link>
-
+                            <Link href="#"><a className="">By clicking Signup, I agree to your terms</a></Link>
                         </div>
                     </form>
                 </div>

@@ -40,7 +40,7 @@ export default function Content() {
                         <div className="col-md-4 ab-content text-center p-lg-5 p-3 my-lg-5">
                             <h4>Travel Must Haves</h4>
                             <p>Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.</p>
-                            <Link href="/shop" className="btn shop mt-3">Shop Now</Link>
+                            <Link href="/shop"><a className="btn shop mt-3">Shop Now</a></Link>
 
                         </div>
                     </div>
@@ -60,7 +60,7 @@ export default function Content() {
                         <div className="col-md-4 content-gd-wthree ab-content py-lg-5 my-lg-5">
                             <h4>Need Extra Space ?</h4>
                             <p>Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.</p>
-                            <Link href="/shop" className="btn shop mt-3">Shop Now</Link>
+                            <Link href="/shop"><a className="btn shop mt-3">Shop Now</a></Link>
 
                         </div>
                         <div className="col-md-4 content-gd-wthree">
@@ -77,14 +77,14 @@ export default function Content() {
                         <Image src="/images/ab1.jpg" width="800" height="450" className="img-fluid" alt="" />
                         <div className="pos-wthree">
                             <h4 className="text-wthree">50% Off Any <br />Women's Bags</h4>
-                            <Link href="/shop" className="btn shop mt-3">Shop Now</Link>
+                            <Link href="/shop"><a className="btn shop mt-3">Shop Now</a></Link>
                         </div>
                     </div>
                     <div className="col-lg-6 bottom-w3pvt-left bottom-w3pvt-right p-lg-0">
                         <Image src="/images/ab2.jpg" width="850" height="450" className="img-fluid" alt="" />
                         <div className="pos-w3pvt">
                             <h4 className="text-w3pvt">30% Off Any <br />Men's Bags</h4>
-                            <Link href="/shop" className="btn shop mt-3">Shop Now</Link>
+                            <Link href="/shop"><a className="btn shop mt-3">Shop Now</a></Link>
                         </div>
                     </div>
                 </div>
@@ -98,7 +98,7 @@ export default function Content() {
                         <div className="col-lg-4 gallery-content-info text-center mt-lg-5">
                             <h3 className="title-wthree mb-lg-5 mb-4">Trending Now </h3>
                             <p>Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.</p>
-                            <Link href="/shop" className="btn shop mt-3">Shop Now</Link>
+                            <Link href="/shop"><a className="btn shop mt-3">Shop Now</a></Link>
 
                         </div>
                         <div className="col-lg-8 gallery-content">
@@ -128,7 +128,7 @@ export default function Content() {
                             <div id="gal1" className="popup-effect">
                                 <div className="popup">
                                     <Image src="/images/g1.jpg" width="450" height="400" alt="Popup image" className="img-fluid mt-4" />
-                                    <Link className="close" href="#gallery">&times;</Link>
+                                    <Link href="#gallery"><a className="close">&times;</a></Link>
                                 </div>
                             </div>
                             {/* <!-- //popup --> */}
@@ -136,7 +136,7 @@ export default function Content() {
                             <div id="gal2" className="popup-effect">
                                 <div className="popup">
                                     <Image src="/images/g2.jpg" width="450" height="400" alt="Popup image" className="img-fluid mt-4" />
-                                    <Link className="close" href="#gallery">&times;</Link>
+                                    <Link href="#gallery"><a className="close">&times;</a></Link>
                                 </div>
                             </div>
                             {/* <!-- //popup --> */}
@@ -144,7 +144,7 @@ export default function Content() {
                             <div id="gal3" className="popup-effect">
                                 <div className="popup">
                                     <Image src="/images/g3.jpg" width="450" height="400" alt="Popup image" className="img-fluid mt-4" />
-                                    <Link className="close" href="#gallery">&times;</Link>
+                                    <Link href="#gallery"><a className="close">&times;</a></Link>
                                 </div>
                             </div>
                             {/* <!-- //popup --> */}

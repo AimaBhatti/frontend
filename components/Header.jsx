@@ -9,13 +9,24 @@ export default function Header() {
 					{/* <!-- nav --> */}
 					<div className="top-w3pvt d-flex">
 						<div id="logo">
-							<Image src='/logo.png' width={100} height={100} />
-							<h1> <Link href="/"><span className="log-w3pvt">B</span>aggage</Link> <label className="sub-des">Online Store</label></h1>
+							<Link href="/"><a><Image src='/logo.png' width={100} height={100} /></a></Link>
+							<h1>
+								<Link href="/"><a><span className="log-w3pvt">B</span>aggage</a></Link>
+								<label className="sub-des">Online Store</label>
+							</h1>
 						</div>
 
 						<div className="forms ml-auto">
-							<Link href="/login" className="btn"><span className="fa fa-user-circle-o"></span> Sign In</Link>
-							<Link href="/register" className="btn"><span className="fa fa-pencil-square-o"></span> Sign Up</Link>
+							<Link href="/login">
+								<a className="btn">
+									<span className="fa fa-user-circle-o"></span> Sign In
+								</a>
+							</Link>
+							<Link href="/register">
+								<a className="btn">
+									<span className="fa fa-pencil-square-o"></span> Sign Up
+								</a>
+							</Link>
 						</div>
 					</div>
 					<div className="nav-top-wthree">
@@ -24,16 +35,16 @@ export default function Header() {
 							<input type="checkbox" id="drop" />
 							<ul className="menu">
 								<li className="active"><Link href="/">Home</Link></li>
-								<li><Link href="/about">About Us</Link></li>
+								<li><Link href="/about"><a>About Us</a></Link></li>
 								<li>
 									{/* <!-- First Tier Drop Down --> */}
 									<label htmlFor="drop-2" className="toggle">Dropdown <span className="fa fa-angle-down" aria-hidden="true"></span>
 									</label>
-									<Link href="#">Dropdown <span className="fa fa-angle-down" aria-hidden="true"></span></Link>
+									<Link href="#"><a>Dropdown<span className="fa fa-angle-down" aria-hidden="true"></span></a></Link>
 									<input type="checkbox" id="drop-2" />
 									<ul>
-										<li><Link href="/about" className="drop-text">About</Link></li>
-										<li><Link href="/single" className="drop-text">Single Page</Link></li>
+										<li><Link href="/about"><a className="drop-text">About</a></Link></li>
+										<li><Link href="/single"><a className="drop-text">Single Page</a></Link></li>
 
 									</ul>
 								</li>

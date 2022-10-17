@@ -31,7 +31,7 @@ export default function shop() {
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <Link href="/single">Messenger Bag </Link>
+                                        <Link href="/single"><a>Messenger Bag </a></Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -40,11 +40,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@ export default function shop() {
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <Link href="/single">Shoulder Bag (Pink) </Link>
+                                        <Link href="/single"><a>Shoulder Bag (Pink) </a></Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -66,11 +66,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@ export default function shop() {
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <Link href="/single">Sling Bag </Link>
+                                        <Link href="/single"><a>Sling Bag </a></Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -92,11 +92,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@ export default function shop() {
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <Link href="/single">Tote (Blue) </Link>
+                                        <Link href="/single"><a>Tote (Blue) </a></Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -118,11 +118,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@ export default function shop() {
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <Link href="/single">Satchel (Yellow) </Link>
+                                        <Link href="/single"><a>Satchel (Yellow) </a></Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -149,11 +149,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -166,7 +166,7 @@ export default function shop() {
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <Link href="/single">Shoulder Bag (Orange)</Link>
+                                        <Link href="/single"><a>Shoulder Bag (Orange) </a></Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -175,11 +175,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -192,7 +192,7 @@ export default function shop() {
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <Link href="/single">Hobo (Blue) </Link>
+                                        <Link href="/single"><a>Hobo (Blue) </a></Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -201,11 +201,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -218,7 +218,7 @@ export default function shop() {
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <Link href="/single">Satchel (Pink)</Link>
+                                        <Link href="/single"><a>Satchel (Pink) </a></Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -227,11 +227,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -251,7 +251,7 @@ export default function shop() {
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <Link href="/single">Sling Bag </Link>
+                                        <Link href="/single"><a>Sling Bag </a></Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -260,11 +260,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -277,7 +277,7 @@ export default function shop() {
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <Link href="/single">Tote (Blue) </Link>
+                                        <Link href="/single"><a>Tote (Blue) </a></Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -286,11 +286,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -305,7 +305,7 @@ export default function shop() {
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <Link href="/single">Messenger Bag </Link>
+                                        <Link href="/single"><a>Messenger Bag </a></Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -314,11 +314,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -331,7 +331,7 @@ export default function shop() {
                                 </div>
                                 <div className="item-info-product">
                                     <h4>
-                                        <Link href="/single">Shoulder Bag (Pink) </Link>
+                                        <Link href="/single"><a>Shoulder Bag (Pink) </a></Link>
                                     </h4>
 
                                     <div className="product_price">
@@ -340,11 +340,11 @@ export default function shop() {
                                         </div>
                                     </div>
                                     <ul className="stars">
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                        <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -355,19 +355,19 @@ export default function shop() {
                     <nav aria-label="Page navigation example mt-5">
                         <ul className="pagination">
                             <li className="page-item">
-                                <Link className="page-link" href="#">Previous</Link>
+                                <Link href="#"><a className="page-link">Previous</a></Link>
                             </li>
                             <li className="page-item">
-                                <Link className="page-link" href="#">1</Link>
+                                <Link href="#"><a className="page-link">1</a></Link>
                             </li>
                             <li className="page-item">
-                                <Link className="page-link" href="#">2</Link>
+                                <Link href="#"><a className="page-link">2</a></Link>
                             </li>
                             <li className="page-item">
-                                <Link className="page-link" href="#">3</Link>
+                                <Link href="#"><a className="page-link">3</a></Link>
                             </li>
                             <li className="page-item">
-                                <Link className="page-link" href="#">Next</Link>
+                                <Link href="#"><a className="page-link">Next</a></Link>
                             </li>
                         </ul>
                     </nav>

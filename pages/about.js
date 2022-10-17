@@ -26,7 +26,7 @@ export default function about() {
                 <div className="col-lg-6 ab-info-con ab-inf-page text-left">
                     <h4>About Our Baggage</h4>
                     <p>Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.</p>
-                    <Link href="/single" className="btn shop mt-4">Read More</Link>
+                    <Link href="/single"><a className="btn shop mt-4">Read More</a></Link>
                 </div>
             </div>
             <Content />

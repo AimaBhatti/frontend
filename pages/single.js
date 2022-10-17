@@ -28,14 +28,14 @@ export default function single() {
                             </div>
                             <div className="desc1-right col-md-6 pl-lg-3">
                                 <h3>Lorem ipsum dolor sit amet laoret.</h3>
-                                <h5>Rs. 499 <span>599</span> <Link href="#">Click for offer</Link></h5>
+                                <h5>Rs. 499 <span>599</span><Link href="#"><a>Click for offer</a></Link></h5>
                                 <div className="available mt-3">
                                     <form action="#" method="post" className="w3pvt-newsletter subscribe-sec">
                                         <input type="email" name="Email" placeholder="Enter your email..." required="" />
                                         <button className="btn submit">Check</button>
 
                                     </form>
-                                    <span><Link href="#">login to save in wishlist </Link></span>
+                                    <span><Link href="#"><a>login to save in wishlist </a></Link></span>
                                     <p>Lorem Ipsum has been the industry's standard since the 1500s. Praesent ullamcorper dui turpis.. </p>
                                 </div>
                                 <div className="share-desc mt-5">
@@ -43,9 +43,9 @@ export default function single() {
                                         <h4>Share Product :</h4>
                                         <div className="social-ficons mt-4">
                                             <ul>
-                                                <li><Link href="#"><span className="fa fa-facebook"></span> Facebook</Link></li>
-                                                <li><Link href="#"><span className="fa fa-twitter"></span> Twitter</Link></li>
-                                                <li><Link href="#"><span className="fa fa-google"></span>Google</Link></li>
+                                                <li><Link href="#"><a><span className="fa fa-facebook"></span> Facebook</a></Link></li>
+                                                <li><Link href="#"><a><span className="fa fa-twitter"></span> Twitter</a></Link></li>
+                                                <li><Link href="#"><a><span className="fa fa-google"></span>Google</a></Link></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -75,7 +75,7 @@ export default function single() {
                                     </div>
                                     <div className="item-info-product">
                                         <h4>
-                                            <Link href="/single">Messenger Bag </Link>
+                                            <Link href="/single"><a>Messenger Bag </a></Link>
                                         </h4>
 
                                         <div className="product_price">
@@ -84,11 +84,11 @@ export default function single() {
                                             </div>
                                         </div>
                                         <ul className="stars">
-                                            <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@ export default function single() {
                                     </div>
                                     <div className="item-info-product">
                                         <h4>
-                                            <Link href="/single">Shoulder Bag (Pink) </Link>
+                                            <Link href="/single"><a>Shoulder Bag (Pink) </a></Link>
                                         </h4>
 
                                         <div className="product_price">
@@ -110,11 +110,11 @@ export default function single() {
                                             </div>
                                         </div>
                                         <ul className="stars">
-                                            <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -127,7 +127,7 @@ export default function single() {
                                     </div>
                                     <div className="item-info-product">
                                         <h4>
-                                            <Link href="/single">Sling Bag </Link>
+                                            <Link href="/single"><a>Sling Bag </a></Link>
                                         </h4>
 
                                         <div className="product_price">
@@ -136,11 +136,11 @@ export default function single() {
                                             </div>
                                         </div>
                                         <ul className="stars">
-                                            <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -153,7 +153,7 @@ export default function single() {
                                     </div>
                                     <div className="item-info-product">
                                         <h4>
-                                            <Link href="/single">Tote (Blue) </Link>
+                                            <Link href="/single"><a>Tote (Blue) </a></Link>
                                         </h4>
 
                                         <div className="product_price">
@@ -162,11 +162,11 @@ export default function single() {
                                             </div>
                                         </div>
                                         <ul className="stars">
-                                            <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star-half-o" aria-hidden="true"></span></Link></li>
-                                            <li><Link href="#"><span className="fa fa-star-o" aria-hidden="true"></span></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
+                                            <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
                                         </ul>
                                     </div>
                                 </div>
