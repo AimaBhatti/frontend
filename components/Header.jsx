@@ -1,7 +1,17 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useUser } from '../lib/authContext';
+import { unsetToken } from '../lib/auth';
+
 export default function Header() {
+
+	const { user, loading } = useUser();
+
+	const logout = () => {
+		unsetToken();
+	};
+
 	return (
 		<div className="main-sec inner-page">
 			<header className="py-sm-3 pt-3 pb-2" id="home">
@@ -17,16 +27,39 @@ export default function Header() {
 						</div>
 
 						<div className="forms ml-auto">
-							<Link href="/login">
-								<a className="btn">
-									<span className="fa fa-user-circle-o"></span> Sign In
-								</a>
-							</Link>
-							<Link href="/register">
-								<a className="btn">
-									<span className="fa fa-pencil-square-o"></span> Sign Up
-								</a>
-							</Link>
+							{!loading && !user ? (
+								<>
+									<Link href="/login">
+										<a className="btn">
+											<span className="fa fa-sign-in"></span> Sign In
+										</a>
+									</Link>
+
+									<Link href="/register">
+										<a className="btn">
+											<span className="fa fa-pencil-square-o"></span> Sign Up
+										</a>
+									</Link>
+								</>
+							) : (
+								''
+							)}
+
+							{!loading && (user ? (
+								<>
+									<Link href="/profile">
+										<a className="btn">
+											<span className="fa fa-user-circle-o"></span> Profile
+										</a>
+									</Link>
+
+									<a className="btn" onClick={logout}>
+										<span className="fa fa-sign-out"></span> Sign Out
+									</a>
+								</>
+							) : (
+								''
+							))}
 						</div>
 					</div>
 					<div className="nav-top-wthree">
