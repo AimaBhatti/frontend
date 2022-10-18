@@ -3,13 +3,17 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useUser } from '../lib/authContext';
 import { unsetToken } from '../lib/auth';
+import { useRouter } from 'next/router';
 
 export default function Header() {
+
+    const router = useRouter();
 
 	const { user, loading } = useUser();
 
 	const logout = () => {
 		unsetToken();
+		router.redirect('/');
 	};
 
 	return (

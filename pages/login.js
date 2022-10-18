@@ -7,7 +7,7 @@ import { setToken } from '../lib/auth';
 export default function login() {
 
     const [data, setData] = useState({
-        username: '',
+        identifier: '',
         password: '',
     });
 
@@ -26,7 +26,7 @@ export default function login() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    username: data.username,
+                    identifier: data.identifier,
                     password: data.password,
                 }),
             }
@@ -46,7 +46,7 @@ export default function login() {
                         <form onSubmit={handleSubmit}>
                             <div className="field-group">
                                 <div className="content-input-field">
-                                    <input name="username" id="text1" type="text" placeholder="Username" required="" onChange={handleChange} />
+                                    <input name="identifier" id="text1" type="text" placeholder="Username" required="" onChange={handleChange} />
                                 </div>
                             </div>
                             <div className="field-group">
