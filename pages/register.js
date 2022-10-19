@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { setToken } from '../lib/auth';
 import { fetcher } from '../lib/api';
 
-export default function register() {
+export default function Register() {
 
     const router = useRouter();
 

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { fetcher } from '../lib/api';
 import { setToken } from '../lib/auth';
 
-export default function login() {
+export default function Login() {
 
     const [data, setData] = useState({
         identifier: '',
