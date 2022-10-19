@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
+
 class MyDocument extends Document {
     static async getInitialProps(ctx) {
         const originalRenderPage = ctx.renderPage
@@ -22,11 +23,11 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    <link rel="stylesheet" href="css/bootstrap.css" />
+                    {/* <link rel="stylesheet" href="css/bootstrap.css" /> */}
                     {/* <!-- Bootstrap-Core-CSS --> */}
-                    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+                    {/* <link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> */}
                     {/* <!-- font-awesome-icons --> */}
-                    <link href="css/font-awesome.css" rel="stylesheet" />
+                    {/* <link href="css/font-awesome.css" rel="stylesheet" /> */}
                     {/* <!-- /Fonts --> */}
                     <link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" />
                 </Head>
