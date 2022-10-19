@@ -8,7 +8,8 @@
     "start": "next start -H 0.0.0.0 -p $PORT",
     "start:dev": "next start",
     "start:prod": "next start -p 80",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build && next export"
   },
   "dependencies": {
     "js-cookie": "^3.0.1",
