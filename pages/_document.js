@@ -23,12 +23,6 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    {/* <link rel="stylesheet" href="css/bootstrap.css" /> */}
-                    {/* <!-- Bootstrap-Core-CSS --> */}
-                    {/* <link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> */}
-                    {/* <!-- font-awesome-icons --> */}
-                    {/* <link href="css/font-awesome.css" rel="stylesheet" /> */}
-                    {/* <!-- /Fonts --> */}
                     <link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" />
                 </Head>
                 <body>
