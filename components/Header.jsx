@@ -71,22 +71,10 @@ export default function Header() {
 							<label htmlFor="drop" className="toggle"><span className="fa fa-bars"></span></label>
 							<input type="checkbox" id="drop" />
 							<ul className="menu">
-								<li className="active"><Link href="/">Home</Link></li>
-								<li><Link href="/about"><a>About Us</a></Link></li>
-								<li>
-									{/* <!-- First Tier Drop Down --> */}
-									<label htmlFor="drop-2" className="toggle">Dropdown <span className="fa fa-angle-down" aria-hidden="true"></span>
-									</label>
-									<Link href="#"><a>Dropdown<span className="fa fa-angle-down" aria-hidden="true"></span></a></Link>
-									<input type="checkbox" id="drop-2" />
-									<ul>
-										<li><Link href="/about"><a className="drop-text">About</a></Link></li>
-										<li><Link href="/single"><a className="drop-text">Single Page</a></Link></li>
-
-									</ul>
-								</li>
-
-								<li><Link href="/shop">Collections</Link></li>
+								<li><Link href="/">Home</Link></li>
+								<li><Link href="/shop"><a>Shop</a></Link></li>
+								<li><Link href="#"><a>Cart  <span className="fa fa-shopping-bag" aria-hidden="true"></span></a></Link></li>
+								<li><Link href="/about">About Us</Link></li>
 								<li><Link href="/contact">Contact</Link></li>
 							</ul>
 						</nav>

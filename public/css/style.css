@@ -231,10 +231,13 @@ nav a:hover {
     color: #ec1c24;
 }
 
-.menu li.active a {
-
+.menu li:hover a {
     color: #ec1c24;
     font-weight: 600;
+}
+
+.menu li a:active {
+    color: #ec1c24;
 }
 
 /* Hide Dropdowns by Default
