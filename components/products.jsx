@@ -4,7 +4,8 @@ import Link from 'next/link'
 
 export default function products() {
     return (
-        <div>
+        <div className='container py-5'>
+            <h3 className="title-wthree mb-lg-5 mb-4 text-center">Shop Now</h3>
             <div className="row shop-wthree-info text-center">
                 <div className="col-lg-3 shop-info-grid text-center mt-4">
                     <div className="product-shoe-info shoe">

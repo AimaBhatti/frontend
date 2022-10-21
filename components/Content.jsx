@@ -7,6 +7,7 @@ export default function Content() {
         <>
             <section className="banner-bottom py-5">
                 <div className="container py-md-3">
+                    <hr></hr>
                     <div className="row grids-wthree-info text-center">
                         <div className="col-lg-4 ab-content">
                             <div className="ab-info-con">
