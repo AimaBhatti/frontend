@@ -73,7 +73,7 @@ export default function Header() {
 							<ul className="menu">
 								<li><Link href="/">Home</Link></li>
 								<li><Link href="/shop"><a>Shop</a></Link></li>
-								<li><Link href="#"><a>Cart  <span className="fa fa-shopping-bag" aria-hidden="true"></span></a></Link></li>
+								<li><Link href="/cart"><a>Cart  <span className="fa fa-shopping-bag" aria-hidden="true"></span></a></Link></li>
 								<li><Link href="/about">About Us</Link></li>
 								<li><Link href="/contact">Contact</Link></li>
 							</ul>
