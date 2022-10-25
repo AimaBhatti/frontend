@@ -891,7 +891,7 @@ ul.list-login {
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
     -ms-transition: 0.5s all;
-    border-radius: 0px;
+    border-radius: 6px;
 }
 
 .bottom-grid,
@@ -919,6 +919,7 @@ ul.links-unordered-list li a {
     text-transform: capitalize;
 }
 
+.content-input-field select,
 .content-input-field input {
     font-size: 16px;
     font-weight: 300;
@@ -931,7 +932,7 @@ ul.links-unordered-list li a {
     background: rgba(0, 123, 255, 0.06);
     margin-bottom: 20px;
     padding: 15px 20px;
-    border-radius: 0px;
+    border-radius: 6px;
 }
 
 ::-webkit-input-placeholder {

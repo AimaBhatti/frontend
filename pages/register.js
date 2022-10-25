@@ -34,13 +34,20 @@ export default function Register() {
                         username: data.username,
                         email: data.email,
                         password: data.password,
+                        gender: data.gender,
+                        contact: data.contact,
+                        address: data.address,
+                        area: data.area,
+                        city: data.city,
+                        state: data.state,
+                        country: data.country,
                     }),
                 }
             );
 
             setToken(responseData);
             router.redirect('/profile');
-        }   
+        }
         catch (error) {
             console.error(error);
         }
@@ -51,18 +58,16 @@ export default function Register() {
             <div className="container">
                 <div className="content-grid">
                     <div className="text-center icon">
-                        <span className="fa fa-user-circle-o"></span>
+                        <span className="fa fa-user-circle-o fa-2x"></span>
                     </div>
                     <div className="content-bottom">
                         <form onSubmit={handleSubmit}>
                             <div className="field-group">
-
                                 <div className="content-input-field">
                                     <input name="username" id="text" type="text" placeholder="Username" required="" onChange={handleChange} />
                                 </div>
                             </div>
                             <div className="field-group">
-
                                 <div className="content-input-field">
                                     <input name="email" id="email" type="email" placeholder="User Email" required="" onChange={handleChange} />
                                 </div>
@@ -72,12 +77,50 @@ export default function Register() {
                                     <input name="password" id="myInput" type="Password" placeholder="Password" required="" onChange={handleChange} />
                                 </div>
                             </div>
+                            <div className="field-group">
+                                <div className="content-input-field">
+                                    <select name="gender" id="gender" type="text" placeholder="Gender" required="" onChange={handleChange}>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div className="field-group">
+                                <div className="content-input-field">
+                                    <input name="contact" id="contact" type="tel" placeholder="Contact Number" required="" onChange={handleChange} />
+                                </div>
+                            </div>
+                            <div className="field-group">
+                                <div className="content-input-field">
+                                    <input name="address" id="address" type="text" placeholder="Address" required="" onChange={handleChange} />
+                                </div>
+                            </div>
+                            <div className="field-group">
+                                <div className="content-input-field">
+                                    <input name="area" id="area" type="text" placeholder="Area" required="" onChange={handleChange} />
+                                </div>
+                            </div>
+                            <div className="field-group">
+                                <div className="content-input-field">
+                                    <input name="city" id="city" type="text" placeholder="City" required="" onChange={handleChange} />
+                                </div>
+                            </div>
+                            <div className="field-group">
+                                <div className="content-input-field">
+                                    <input name="state" id="state" type="text" placeholder="State" required="" onChange={handleChange} />
+                                </div>
+                            </div><div className="field-group">
+                                <div className="content-input-field">
+                                    <input name="country" id="country" type="text" placeholder="Country" required="" onChange={handleChange} />
+                                </div>
+                            </div>
+
                             <div className="content-input-field">
                                 <button type="submit" className="btn">Sign Up</button>
                             </div>
-                            <div className="list-login-bottom text-center mt-lg-5 mt-4">
+                            {/* <div className="list-login-bottom text-center mt-lg-5 mt-4">
                                 <Link href="#"><a className="">By clicking Signup, I agree to your terms</a></Link>
-                            </div>
+                            </div> */}
                         </form>
                     </div>
                 </div>

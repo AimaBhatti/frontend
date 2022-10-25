@@ -18,7 +18,7 @@ export default function Home({ products }) {
             <div key={product.attributes.id} className="col-lg-3 shop-info-grid text-center mt-4">
               <div className="product-shoe-info shoe">
                 <div className="men-thumb-item">
-                  <Image src={product.attributes.images.data.attributes.url}
+                  <Image src={`${product.attributes.images.data.attributes.url}`}
                     width={300} height={300} className="img-fluid" alt="" />
                 </div>
                 <div className="item-info-product">
@@ -27,7 +27,7 @@ export default function Home({ products }) {
                   </h4>
                   <div className="product_price">
                     <div className="grid-price">
-                      <span className="money"><span className="line">$799</span> $675.00</span>
+                      <span className="money">${product.attributes.price}</span>
                     </div>
                   </div>
                 </div>
