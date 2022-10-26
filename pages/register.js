@@ -8,7 +8,6 @@ import { fetcher } from '../lib/api';
 export default function Register() {
 
     const router = useRouter();
-
     const [data, setData] = useState({
         username: '',
         email: '',
@@ -51,9 +50,8 @@ export default function Register() {
                     }),
                 }
             );
-
             setToken(responseData);
-            router.redirect('/profile');
+            router.push('/profile');
         }
         catch (error) {
             console.error(error);

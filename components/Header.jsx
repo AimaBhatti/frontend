@@ -7,13 +7,12 @@ import { useRouter } from 'next/router';
 
 export default function Header() {
 
-    const router = useRouter();
-
+	const router = useRouter();
 	const { user, loading } = useUser();
 
 	const logout = () => {
 		unsetToken();
-		router.redirect('/');
+		router.push('/');
 	};
 
 	return (
