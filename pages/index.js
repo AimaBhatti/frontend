@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Link from 'next/link'
 import Content from '../components/Content'
 import Newsletter from '../components/Newsletter'
@@ -18,7 +18,7 @@ export default function Home({ products }) {
             <div key={product.attributes.id} className="col-lg-3 shop-info-grid text-center mt-4">
               <div className="product-shoe-info shoe">
                 <div className="men-thumb-item">
-                  <Image src={`${product.attributes.images.data.attributes.url}`}
+                  <img src={`http://localhost:1337/public${product.attributes?.images?.data?.attributes?.formats?.thumbnail?.url}`}
                     width={300} height={300} className="img-fluid" alt="" />
                 </div>
                 <div className="item-info-product">

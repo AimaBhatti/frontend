@@ -13,6 +13,13 @@ export default function Register() {
         username: '',
         email: '',
         password: '',
+        gender: '',
+        contact: '',
+        address: '',
+        area: '',
+        city: '',
+        state: '',
+        country: '',
     });
 
     const handleChange = (e) => {
