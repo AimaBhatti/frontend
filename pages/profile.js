@@ -1,10 +1,8 @@
 import Head from 'next/head'
 import React from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router';
 import { fetcher } from '../lib/api';
-import { getTokenFromServerCookie, getIdFromServerCookie, unsetToken } from '../lib/auth';
-// import Image from 'next/image'
+import { getTokenFromServerCookie } from '../lib/auth';
 
 export async function getServerSideProps({ req }) {
   const jwt = getTokenFromServerCookie(req);
@@ -16,22 +14,7 @@ export async function getServerSideProps({ req }) {
   };
 }
 
-export default function profile({ user  }) {
-
-  // const router = useRouter();
-
-  // const handleDelete = async (e) => {
-  //   e.preventDefault();
-  //   let delData = await fetcher(`http://localhost:1337/api/users/${id}`,
-  //     {
-  //       method: 'DELETE',
-  //       Authorization: 'Bearer 49774043ef536736d5c41810f331d7cff8ae39f2f04455ba7354f63ad72145d49cde05e030b72a828da953e93601f303b048791d6066d41347fc5ae05a1bd75d288e364df7dc0051c1255c3df0e43986c5df3097668595f01e5e88253379f214ec4b7f0a8f3460ba37c90f5353bb1fda81adc541f68b93c853c2face4b881558',
-  //     },
-  //   );
-  //   unsetToken();
-  //   // router.push('/');
-  // }
-
+export default function profile({ user }) {
   return (
     <>
       <Head>
@@ -56,7 +39,7 @@ export default function profile({ user  }) {
                 </div>
                 <div className="col-md-6">
                   <label className="labels">Mobile Number</label>
-                  <input type="tel" className="form-control" value={user.contact} disabled />
+                  <input type="number" className="form-control" value={user.contact} disabled />
                 </div>
                 <div className="col-md-9">
                   <label className="labels">Email</label>

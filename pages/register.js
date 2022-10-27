@@ -112,7 +112,7 @@ export default function Register() {
                             </div>
                             <div className="field-group">
                                 <div className="content-input-field">
-                                    <input name="contact" id="contact" type="tel" placeholder="Contact Number" required="" onChange={handleChange} />
+                                    <input name="contact" id="contact" type="number" placeholder="Contact Number" required="" onChange={handleChange} />
                                 </div>
                             </div>
                             <div className="field-group">

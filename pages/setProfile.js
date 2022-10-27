@@ -2,34 +2,22 @@ import Head from 'next/head'
 import React from 'react'
 import { useState } from 'react';
 import { fetcher } from '../lib/api';
-import { getTokenFromServerCookie, getIdFromServerCookie } from '../lib/auth';
+import { getTokenFromServerCookie } from '../lib/auth';
 
 export async function getServerSideProps({ req }) {
     const jwt = getTokenFromServerCookie(req);
-    const id = getIdFromServerCookie(req);
     let headers = { Authorization: `Bearer ${jwt}` }
     let userResponse = await fetch(`http://localhost:1337/api/users/me`, { headers: headers });
     let user = await userResponse.json()
-    console.log(id)
-    console.log(user)
+    // console.log(user)
     return {
-      props: { user, id },
+      props: { user },
     };
   }
 
-export default function setProfile({user, id}) {
+export default function setProfile({user}) {
 
-    const [data, setData] = useState({
-        username: '',
-        email: '',
-        gender: '',
-        contact: '',
-        address: '',
-        area: '',
-        city: '',
-        state: '',
-        country: '',
-      });
+    const [data, setData] = useState();
     
       const handleChange = (e) => {
         setData({ ...data, [e.target.name]: e.target.value });
@@ -39,7 +27,7 @@ export default function setProfile({user, id}) {
         e.preventDefault();
     
         try {
-          let userData = await fetcher(`http://localhost:1337/api/users/+${id}`,
+          let userData = await fetcher(`http://localhost:1337/api/users/${user.id}`,
             {
               method: 'PUT',
               headers: {
@@ -47,9 +35,9 @@ export default function setProfile({user, id}) {
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify({
-                username: data.username,
-                email: data.email,
-                gender: data.gender,
+                // username: data.username,
+                // email: data.email,
+                // gender: data.gender,
                 contact: data.contact,
                 address: data.address,
                 area: data.area,
@@ -59,6 +47,7 @@ export default function setProfile({user, id}) {
               }),
             }
           );
+          console.log(userData);
         }
         catch (error) {
           console.error(error);
@@ -67,68 +56,126 @@ export default function setProfile({user, id}) {
 
   return (
     <>
-        <Head>
-            <title>Bagagge | Set Profile</title>
-        </Head>
-        <div className="container rounded bg-white mt-5 mb-5">
+      <Head>
+        <title>Bagagge | Set Profile</title>
+      </Head>
+      <div className="container rounded bg-white mt-5 mb-5">
         <div className="row">
-          <div className="col-md-5">
+          <div className="col-md-5 offset-3">
             <div className="p-3 py-5">
               <div className="d-flex justify-content-between align-items-center mb-3">
-                <h2 className="text-right">Profile</h2>
+                <h2 className="text-right">Update Your Profile</h2>
               </div>
               <form onSubmit={handleSubmit}>
                 <div className="row mt-2">
                   <div className="col-md-6">
                     <label className="labels">Name</label>
-                    <input name='username' type="text" className="form-control" placeholder={user.username} onChange={handleChange} />
+                    <input
+                      name="username"
+                      type="text"
+                      className="form-control"
+                      value={user.username}
+                      disabled
+                    />
                   </div>
                   <div className="col-md-6">
                     <label className="labels">Gender</label>
-                    <input name='gender' type="text" className="form-control" placeholder={user.gender} onChange={handleChange} />
+                    <input
+                      name="gender"
+                      type="text"
+                      className="form-control"
+                      value={user.gender}
+                      disabled
+                    />
                   </div>
                   <div className="col-md-6">
                     <label className="labels">Mobile Number</label>
-                    <input name='contact' type="tel" className="form-control" placeholder={user.contact} onChange={handleChange} />
+                    <input
+                      name="contact"
+                      type="number"
+                      className="form-control"
+                      placeholder={user.contact}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className="col-md-9">
                     <label className="labels">Email</label>
-                    <input name='email' type="email" className="form-control" placeholder={user.email} onChange={handleChange} />
+                    <input
+                      name="email"
+                      type="email"
+                      className="form-control"
+                      value={user.email}
+                      disabled
+                    />
                   </div>
                 </div>
 
                 <div className="row mt-3">
                   <div className="col-md-12">
                     <label className="labels">Address</label>
-                    <input name='address' type="text" className="form-control" placeholder={user.address} onChange={handleChange} />
+                    <input
+                      name="address"
+                      type="text"
+                      className="form-control"
+                      placeholder={user.address}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className="col-md-6">
                     <label className="labels">Area</label>
-                    <input name='area' type="text" className="form-control" placeholder={user.area} onChange={handleChange} />
+                    <input
+                      name="area"
+                      type="text"
+                      className="form-control"
+                      placeholder={user.area}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className="col-md-6">
                     <label className="labels">City</label>
-                    <input name='city' type="text" className="form-control" placeholder={user.city} onChange={handleChange} />
+                    <input
+                      name="city"
+                      type="text"
+                      className="form-control"
+                      placeholder={user.city}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className="col-md-6">
                     <label className="labels">State</label>
-                    <input name='state' type="text" className="form-control" placeholder={user.state} onChange={handleChange} />
+                    <input
+                      name="state"
+                      type="text"
+                      className="form-control"
+                      placeholder={user.state}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className="col-md-6">
                     <label className="labels">Country</label>
-                    <input name='country' type="text" className="form-control" placeholder={user.country} onChange={handleChange} />
+                    <input
+                      name="country"
+                      type="text"
+                      className="form-control"
+                      placeholder={user.country}
+                      onChange={handleChange}
+                    />
                   </div>
                 </div>
 
                 <div className="mt-5 text-center">
-                  <button className="btn btn-primary profile-button" type="submit">Save</button>
+                  <button
+                    className="btn btn-primary profile-button"
+                    type="submit"
+                  >
+                    Save
+                  </button>
                 </div>
               </form>
             </div>
-
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
