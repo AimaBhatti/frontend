@@ -35,9 +35,6 @@ export default function setProfile({user}) {
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify({
-                // username: data.username,
-                // email: data.email,
-                // gender: data.gender,
                 contact: data.contact,
                 address: data.address,
                 area: data.area,
