@@ -12,7 +12,7 @@ export default function Header() {
 
 	const logout = () => {
 		unsetToken();
-		router.push('/');
+		//router.push('/');
 	};
 
 	return (

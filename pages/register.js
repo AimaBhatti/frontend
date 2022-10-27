@@ -1,13 +1,10 @@
 import React from 'react'
-import Link from 'next/link'
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import { setToken } from '../lib/auth';
 import { fetcher } from '../lib/api';
 
 export default function Register() {
 
-    const router = useRouter();
     const [data, setData] = useState({
         username: '',
         email: '',
@@ -48,10 +45,33 @@ export default function Register() {
                         state: data.state,
                         country: data.country,
                     }),
+
                 }
             );
+            const emailRes = await fetcher(
+                `http://localhost:1337/api/emails`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        // username: data.username,
+                        email: data.email,
+                        // password: data.password,
+                        // gender: data.gender,
+                        // contact: data.contact,
+                        // address: data.address,
+                        // area: data.area,
+                        // city: data.city,
+                        // state: data.state,
+                        // country: data.country,
+                    }),
+
+                }
+            );
+            console.log(emailRes)
             setToken(responseData);
-            router.push('/profile');
         }
         catch (error) {
             console.error(error);
