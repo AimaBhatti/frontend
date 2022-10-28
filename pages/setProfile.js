@@ -9,7 +9,6 @@ export async function getServerSideProps({ req }) {
     let headers = { Authorization: `Bearer ${jwt}` }
     let userResponse = await fetch(`http://localhost:1337/api/users/me`, { headers: headers });
     let user = await userResponse.json()
-    // console.log(user)
     return {
       props: { user },
     };

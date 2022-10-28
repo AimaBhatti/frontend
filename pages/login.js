@@ -3,11 +3,9 @@ import Link from 'next/link'
 import { useState } from 'react';
 import { fetcher } from '../lib/api';
 import { setToken } from '../lib/auth';
-import { useRouter } from 'next/router';
 
 export default function Login() {
 
-    const router = useRouter();
     const [data, setData] = useState({
         identifier: '',
         password: '',
@@ -34,7 +32,6 @@ export default function Login() {
             }
         );
         setToken(responseData);
-        router.push('/')
     };
 
     return (
