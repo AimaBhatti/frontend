@@ -41,6 +41,7 @@ export default function Home({ products }) {
                         </span>
                       </div>
                     </div>
+                    <button className="cart-btn .btn my-4 mx-0 px-2 py-1">Add to Cart <span className="fa fa-shopping-bag" aria-hidden="true"></span></button>
                   </div>
                 </div>
               </div>

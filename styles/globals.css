@@ -55,7 +55,7 @@ a {
 }
 
 .profile-button:active {
-  background: #f42b2e;
+  background: #007bff;
   box-shadow: none
 }
 
@@ -185,4 +185,14 @@ hr{
 }
 #btn:hover{
   color: white;
+}
+
+/* index */
+.cart-btn {
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+header button.btn {
+  margin-bottom: 1px;
 }

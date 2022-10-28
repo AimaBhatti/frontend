@@ -59,7 +59,7 @@ export default function Login() {
                             <div className="content-input-field">
                                 <button type="submit" className="btn">Sign In</button>
                             </div>
-                            <ul className="list-login">
+                            {/* <ul className="list-login">
                                 <li className="switch-slide">
                                     <label className="switch">
                                         <input type="checkbox" />
@@ -80,7 +80,7 @@ export default function Login() {
                                     <Link href="#"><a className="text-right">Need Help?</a></Link>
                                 </li>
                                 <li className="clearfix"></li>
-                            </ul>
+                            </ul> */}
                         </form>
                     </div>
                 </div>

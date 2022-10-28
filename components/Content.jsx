@@ -72,29 +72,8 @@ export default function Content() {
                 </div>
             </section>
 
-            <section className="mid-section">
-                <div className="d-lg-flex p-0">
-                    <div className="col-lg-6 bottom-w3pvt-left p-lg-0">
-                        <Image src="/images/ab1.jpg" width="800" height="450" className="img-fluid" alt="" />
-                        <div className="pos-wthree">
-                            <h4 className="text-wthree">50% Off Any <br />Women&#39;s Bags</h4>
-                            <Link href="/shop"><a className="btn shop mt-3">Shop Now</a></Link>
-                        </div>
-                    </div>
-                    <div className="col-lg-6 bottom-w3pvt-left bottom-w3pvt-right p-lg-0">
-                        <Image src="/images/ab2.jpg" width="850" height="450" className="img-fluid" alt="" />
-                        <div className="pos-w3pvt">
-                            <h4 className="text-w3pvt">30% Off Any <br />Men&#39;s Bags</h4>
-                            <Link href="/shop"><a className="btn shop mt-3">Shop Now</a></Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section className="banner-bottom py-5">
                 <div className="container py-md-5">
-
-
                     <div className="row">
                         <div className="col-lg-4 gallery-content-info text-center mt-lg-5">
                             <h3 className="title-wthree mb-lg-5 mb-4">Trending Now </h3>
