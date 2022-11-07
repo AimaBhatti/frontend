@@ -22,6 +22,12 @@ export default function profile({ user }) {
       <Head>
         <title>Baggage | Profile</title>
       </Head>
+      <ol className="breadcrumb">
+        <li className="breadcrumb-item">
+          <Link href="/">Home</Link>
+        </li>
+        <li className="breadcrumb-item active">Profile</li>
+      </ol>
       <div className="container rounded bg-white mt-5 mb-5">
         <div className="row">
           <div className="col-md-5 offset-3">

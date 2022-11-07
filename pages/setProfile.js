@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
+import Router from 'next/router';
 import { useState } from 'react';
 import { fetcher } from '../lib/api';
 import { getTokenFromServerCookie } from '../lib/auth';
@@ -43,7 +44,8 @@ export default function setProfile({user}) {
               }),
             }
           );
-          console.log(userData);
+          Swal.fire("Your profile has been updated successfully!", "success");
+          Router.push("/profile");
         }
         catch (error) {
           console.error(error);

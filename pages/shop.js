@@ -1,379 +1,262 @@
 import React from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
-import Image from 'next/image'
+import {fetcher} from '../lib/api'
 import Newsletter from '../components/Newsletter'
 
-export default function shop() {
+
+export async function getServerSideProps() {
+  
+  let totebags = await fetcher(
+    "http://localhost:1337/api/products?filters[product_category][c_Id][$eq]=Tote&populate=*"
+  );
+  let handbags = await fetcher(
+    "http://localhost:1337/api/products?filters[product_category][c_Id][$eq]=HB&populate=*"
+  );
+  let crossbodybags = await fetcher(
+    "http://localhost:1337/api/products?filters[product_category][c_Id][$eq]=CB&populate=*"
+  );
+ let laptopbags = await fetcher(
+   "http://localhost:1337/api/products?filters[product_category][c_Id][$eq]=LP&populate=*"
+ );
+
+  return {
+    props: { totebags, handbags, crossbodybags, laptopbags },
+  };
+}
+
+
+
+export default function shop({totebags, handbags, crossbodybags, laptopbags}) {
     return (
-        <div>
-            <Head>
-                <title>Baggage | Shop</title>
-            </Head>
+      <div>
+        <Head>
+          <title>Baggage | Shop</title>
+        </Head>
 
-            <ol className="breadcrumb">
-                <li className="breadcrumb-item">
-                    <Link href="/">Home</Link>
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
+            <Link href="/">Home</Link>
+          </li>
+          <li className="breadcrumb-item active">Collections</li>
+        </ol>
+
+        <section className="banner-bottom py-5">
+          <div className="container py-5">
+            <h3 className="title-wthree mb-lg-5 mb-4 text-center">Tote Bags</h3>
+            <div className="row shop-wthree-info text-center">
+              {totebags &&
+                totebags.data.map((totebag) => (
+                  <div
+                    key={totebag.attributes.id}
+                    className="col-lg-3 shop-info-grid text-center mt-4"
+                  >
+                    <div className="product-shoe-info shoe">
+                      <div className="men-thumb-item">
+                        <img
+                          src={`http://localhost:1337${totebag.attributes?.images?.data?.attributes?.formats?.thumbnail?.url}`}
+                          width={250}
+                          height={250}
+                          className="img-fluid"
+                          alt=""
+                        />
+                      </div>
+                      <div className="item-info-product">
+                        <h4>
+                          <Link href="/single">
+                            <a>{totebag.attributes.name}</a>
+                          </Link>
+                        </h4>
+                        <div className="product_price">
+                          <div className="grid-price">
+                            <span className="money">
+                              ${totebag.attributes.price}
+                            </span>
+                          </div>
+                        </div>
+                        <button className="btn btn-success mt-1">
+                          Add to Cart{" "}
+                          <span
+                            className="fa fa-shopping-bag"
+                            aria-hidden="true"
+                          ></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+
+            <h3 className="title-wthree mb-lg-5 mb-4 mt-5 text-center">
+              Handbags
+            </h3>
+            <div className="row shop-wthree-info text-center">
+              {handbags &&
+                handbags.data.map((handbag) => (
+                  <div
+                    key={handbag.attributes.id}
+                    className="col-lg-3 shop-info-grid text-center mt-4"
+                  >
+                    <div className="product-shoe-info shoe">
+                      <div className="men-thumb-item">
+                        <img
+                          src={`http://localhost:1337${handbag.attributes?.images?.data?.attributes?.formats?.thumbnail?.url}`}
+                          width={250}
+                          height={250}
+                          className="img-fluid"
+                          alt=""
+                        />
+                      </div>
+                      <div className="item-info-product">
+                        <h4>
+                          <Link href="/single">
+                            <a>{handbag.attributes.name}</a>
+                          </Link>
+                        </h4>
+                        <div className="product_price">
+                          <div className="grid-price">
+                            <span className="money">
+                              ${handbag.attributes.price}
+                            </span>
+                          </div>
+                        </div>
+                        <button className="btn btn-success mt-1">
+                          Add to Cart{" "}
+                          <span
+                            className="fa fa-shopping-bag"
+                            aria-hidden="true"
+                          ></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+
+            <h3 className="title-wthree mb-lg-5 mb-4 mt-5 text-center">
+              CrosBody Bags
+            </h3>
+            <div className="row shop-wthree-info text-center">
+              {crossbodybags &&
+                crossbodybags.data.map((crossbodybag) => (
+                  <div
+                    key={crossbodybag.attributes.id}
+                    className="col-lg-3 shop-info-grid text-center mt-4"
+                  >
+                    <div className="product-shoe-info shoe">
+                      <div className="men-thumb-item">
+                        <img
+                          src={`http://localhost:1337${crossbodybag.attributes?.images?.data?.attributes?.formats?.thumbnail?.url}`}
+                          width={250}
+                          height={250}
+                          className="img-fluid"
+                          alt=""
+                        />
+                      </div>
+                      <div className="item-info-product">
+                        <h4>
+                          <Link href="/single">
+                            <a>{crossbodybag.attributes.name}</a>
+                          </Link>
+                        </h4>
+                        <div className="product_price">
+                          <div className="grid-price">
+                            <span className="money">
+                              ${crossbodybag.attributes.price}
+                            </span>
+                          </div>
+                        </div>
+                        <button className="btn btn-success mt-1">
+                          Add to Cart{" "}
+                          <span
+                            className="fa fa-shopping-bag"
+                            aria-hidden="true"
+                          ></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+
+            <h3 className="title-wthree mb-lg-5 mb-4 mt-5 text-center">
+              Laptop Bags
+            </h3>
+            <div className="row shop-wthree-info text-center">
+              {laptopbags &&
+                laptopbags.data.map((laptopbag) => (
+                  <div
+                    key={laptopbag.attributes.id}
+                    className="col-lg-3 shop-info-grid text-center mt-4"
+                  >
+                    <div className="product-shoe-info shoe">
+                      <div className="men-thumb-item">
+                        <img
+                          src={`http://localhost:1337${laptopbag.attributes?.images?.data?.attributes?.formats?.thumbnail?.url}`}
+                          width={250}
+                          height={250}
+                          className="img-fluid"
+                          alt=""
+                        />
+                      </div>
+                      <div className="item-info-product">
+                        <h4>
+                          <Link href="/single">
+                            <a>{laptopbag.attributes.name}</a>
+                          </Link>
+                        </h4>
+                        <div className="product_price">
+                          <div className="grid-price">
+                            <span className="money">
+                              ${laptopbag.attributes.price}
+                            </span>
+                          </div>
+                        </div>
+                        <button className="btn btn-success mt-1">
+                          Add to Cart{" "}
+                          <span
+                            className="fa fa-shopping-bag"
+                            aria-hidden="true"
+                          ></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+
+            <nav aria-label="Page navigation example mt-5">
+              <ul className="pagination">
+                <li className="page-item">
+                  <Link href="#">
+                    <a className="page-link">Previous</a>
+                  </Link>
                 </li>
-                <li className="breadcrumb-item active">Collections</li>
-            </ol>
-
-            <section className="banner-bottom py-5">
-                <div className="container py-5">
-                    <h3 className="title-wthree mb-lg-5 mb-4 text-center">Shop Now</h3>
-                    {/* <!--/row--> */}
-                    <div className="row shop-wthree-info text-center">
-                        <div className="col-lg-3 shop-info-grid text-center mt-4">
-                            <div className="product-shoe-info shoe">
-                                <div className="men-thumb-item">
-                                    <Image src="/images/b1.jpg" width={300} height={300} className="img-fluid" alt="" />
-
-                                </div>
-                                <div className="item-info-product">
-                                    <h4>
-                                        <Link href="/single"><a>Messenger Bag </a></Link>
-                                    </h4>
-
-                                    <div className="product_price">
-                                        <div className="grid-price">
-                                            <span className="money"><span className="line">$799</span> $675.00</span>
-                                        </div>
-                                    </div>
-                                    <ul className="stars">
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 shop-info-grid text-center mt-4">
-                            <div className="product-shoe-info shoe">
-                                <div className="men-thumb-item">
-                                    <Image src="/images/b2.jpg" width={300} height={300} className="img-fluid" alt="" />
-
-                                </div>
-                                <div className="item-info-product">
-                                    <h4>
-                                        <Link href="/single"><a>Shoulder Bag (Pink) </a></Link>
-                                    </h4>
-
-                                    <div className="product_price">
-                                        <div className="grid-price">
-                                            <span className="money"><span className="line">$799</span> $675.00</span>
-                                        </div>
-                                    </div>
-                                    <ul className="stars">
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 shop-info-grid text-center mt-4">
-                            <div className="product-shoe-info shoe">
-                                <div className="men-thumb-item">
-                                    <Image src="/images/b3.jpg" width={300} height={300} className="img-fluid" alt="" />
-
-                                </div>
-                                <div className="item-info-product">
-                                    <h4>
-                                        <Link href="/single"><a>Sling Bag </a></Link>
-                                    </h4>
-
-                                    <div className="product_price">
-                                        <div className="grid-price">
-                                            <span className="money"><span className="line">$599</span> $475.00</span>
-                                        </div>
-                                    </div>
-                                    <ul className="stars">
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 shop-info-grid text-center mt-4">
-                            <div className="product-shoe-info shoe">
-                                <div className="men-thumb-item">
-                                    <Image src="/images/b4.jpg" width={300} height={300} className="img-fluid" alt="" />
-
-                                </div>
-                                <div className="item-info-product">
-                                    <h4>
-                                        <Link href="/single"><a>Tote (Blue) </a></Link>
-                                    </h4>
-
-                                    <div className="product_price">
-                                        <div className="grid-price">
-                                            <span className="money"><span className="line">$799</span> $675.00</span>
-                                        </div>
-                                    </div>
-                                    <ul className="stars">
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    {/* <!--//row--> */}
-                    {/* <!--/row1--> */}
-                    <div className="row shop-wthree-info text-center">
-                        <div className="col-lg-3 shop-info-grid text-center mt-4">
-                            <div className="product-shoe-info shoe">
-                                <div className="men-thumb-item">
-                                    <Image src="/images/b5.jpg" width={300} height={300} className="img-fluid" alt="" />
-
-                                </div>
-                                <div className="item-info-product">
-                                    <h4>
-                                        <Link href="/single"><a>Satchel (Yellow) </a></Link>
-                                    </h4>
-
-                                    <div className="product_price">
-                                        <div className="grid-price">
-                                            <span className="money"><span className="line">$999</span> $875.00</span>
-                                        </div>
-                                    </div>
-                                    <ul className="stars">
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 shop-info-grid text-center mt-4">
-                            <div className="product-shoe-info shoe">
-                                <div className="men-thumb-item">
-                                    <Image src="/images/b6.jpg" width={300} height={300} className="img-fluid" alt="" />
-
-                                </div>
-                                <div className="item-info-product">
-                                    <h4>
-                                        <Link href="/single"><a>Shoulder Bag (Orange) </a></Link>
-                                    </h4>
-
-                                    <div className="product_price">
-                                        <div className="grid-price">
-                                            <span className="money"><span className="line">$799</span> $675.00</span>
-                                        </div>
-                                    </div>
-                                    <ul className="stars">
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 shop-info-grid text-center mt-4">
-                            <div className="product-shoe-info shoe">
-                                <div className="men-thumb-item">
-                                    <Image src="/images/b8.jpg" width={300} height={300} className="img-fluid" alt="" />
-
-                                </div>
-                                <div className="item-info-product">
-                                    <h4>
-                                        <Link href="/single"><a>Hobo (Blue) </a></Link>
-                                    </h4>
-
-                                    <div className="product_price">
-                                        <div className="grid-price">
-                                            <span className="money"><span className="line">$799</span> $675.00</span>
-                                        </div>
-                                    </div>
-                                    <ul className="stars">
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 shop-info-grid text-center mt-4">
-                            <div className="product-shoe-info shoe">
-                                <div className="men-thumb-item">
-                                    <Image src="/images/b7.jpg" width={300} height={300} className="img-fluid" alt="" />
-
-                                </div>
-                                <div className="item-info-product">
-                                    <h4>
-                                        <Link href="/single"><a>Satchel (Pink) </a></Link>
-                                    </h4>
-
-                                    <div className="product_price">
-                                        <div className="grid-price">
-                                            <span className="money"><span className="line">$599</span> $475.00</span>
-                                        </div>
-                                    </div>
-                                    <ul className="stars">
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    {/* <!--//row1--> */}
-                    {/* <!--/row--> */}
-                    <div className="row shop-wthree-info text-center mb-5">
-                        <div className="col-lg-3 shop-info-grid text-center mt-4">
-                            <div className="product-shoe-info shoe">
-                                <div className="men-thumb-item">
-                                    <Image src="/images/b3.jpg" width={300} height={300} className="img-fluid" alt="" />
-
-                                </div>
-                                <div className="item-info-product">
-                                    <h4>
-                                        <Link href="/single"><a>Sling Bag </a></Link>
-                                    </h4>
-
-                                    <div className="product_price">
-                                        <div className="grid-price">
-                                            <span className="money"><span className="line">$599</span> $475.00</span>
-                                        </div>
-                                    </div>
-                                    <ul className="stars">
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 shop-info-grid text-center mt-4">
-                            <div className="product-shoe-info shoe">
-                                <div className="men-thumb-item">
-                                    <Image src="/images/b4.jpg" width={300} height={300} className="img-fluid" alt="" />
-
-                                </div>
-                                <div className="item-info-product">
-                                    <h4>
-                                        <Link href="/single"><a>Tote (Blue) </a></Link>
-                                    </h4>
-
-                                    <div className="product_price">
-                                        <div className="grid-price">
-                                            <span className="money"><span className="line">$799</span> $675.00</span>
-                                        </div>
-                                    </div>
-                                    <ul className="stars">
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div className="col-lg-3 shop-info-grid text-center mt-4">
-                            <div className="product-shoe-info shoe">
-                                <div className="men-thumb-item">
-                                    <Image src="/images/b1.jpg" width={300} height={300} className="img-fluid" alt="" />
-
-                                </div>
-                                <div className="item-info-product">
-                                    <h4>
-                                        <Link href="/single"><a>Messenger Bag </a></Link>
-                                    </h4>
-
-                                    <div className="product_price">
-                                        <div className="grid-price">
-                                            <span className="money"><span className="line">$799</span> $675.00</span>
-                                        </div>
-                                    </div>
-                                    <ul className="stars">
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 shop-info-grid text-center mt-4">
-                            <div className="product-shoe-info shoe">
-                                <div className="men-thumb-item">
-                                    <Image src="/images/b2.jpg" width={300} height={300} className="img-fluid" alt="" />
-
-                                </div>
-                                <div className="item-info-product">
-                                    <h4>
-                                        <Link href="/single"><a>Shoulder Bag (Pink) </a></Link>
-                                    </h4>
-
-                                    <div className="product_price">
-                                        <div className="grid-price">
-                                            <span className="money"><span className="line">$799</span> $675.00</span>
-                                        </div>
-                                    </div>
-                                    <ul className="stars">
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-half-o" aria-hidden="true"></span></a></Link></li>
-                                        <li><Link href="#"><a><span className="fa fa-star-o" aria-hidden="true"></span></a></Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* <!--//row--> */}
-                    </div>
-                    <nav aria-label="Page navigation example mt-5">
-                        <ul className="pagination">
-                            <li className="page-item">
-                                <Link href="#"><a className="page-link">Previous</a></Link>
-                            </li>
-                            <li className="page-item">
-                                <Link href="#"><a className="page-link">1</a></Link>
-                            </li>
-                            <li className="page-item">
-                                <Link href="#"><a className="page-link">2</a></Link>
-                            </li>
-                            <li className="page-item">
-                                <Link href="#"><a className="page-link">3</a></Link>
-                            </li>
-                            <li className="page-item">
-                                <Link href="#"><a className="page-link">Next</a></Link>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </section>
-            <Newsletter />
-        </div>
-    )
+                <li className="page-item">
+                  <Link href="#">
+                    <a className="page-link">1</a>
+                  </Link>
+                </li>
+                <li className="page-item">
+                  <Link href="#">
+                    <a className="page-link">2</a>
+                  </Link>
+                </li>
+                <li className="page-item">
+                  <Link href="#">
+                    <a className="page-link">3</a>
+                  </Link>
+                </li>
+                <li className="page-item">
+                  <Link href="#">
+                    <a className="page-link">Next</a>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+        <Newsletter />
+      </div>
+    );
 }

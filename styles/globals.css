@@ -97,7 +97,7 @@ a {
   }
 }
 .summary{
-  background-color: #ddd;
+  background-color: #74d2e7;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   padding: 4vh;
@@ -145,6 +145,7 @@ img{
 }
 .back-to-shop{
   margin-top: 4.5rem;
+  cursor: pointer;
 }
 h5{
   margin-top: 4vh;
