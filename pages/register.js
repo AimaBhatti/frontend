@@ -153,7 +153,7 @@ export default function Register() {
                     <label className="labels">Mobile Number</label>
                     <input
                       name="contact"
-                      type="number"
+                      type="text"
                       className="form-control"
                       onChange={handleChange}
                     />

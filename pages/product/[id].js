@@ -22,7 +22,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Id({ product, cart, addToCart, delFromCart }) {
-
   const router = useRouter();
   const { id } = router.query;
 
@@ -63,7 +62,7 @@ export default function Id({ product, cart, addToCart, delFromCart }) {
                   <del>${product.attributes.price}</del>
                 </span>
                 <p>{product.attributes.description}</p>
-                <div className="row mt-4 ml-0">Quantity
+                {/* <div className="row mt-4 ml-0">Quantity
                   <span
                     onClick={() => {
                       delFromCart(
@@ -79,7 +78,7 @@ export default function Id({ product, cart, addToCart, delFromCart }) {
                   ></span>
                   <div className="mx-2"></div>   
                   {/* ------------------------------------ */}
-                  <span
+                {/* <span
                     onClick={() => {
                       addToCart(
                         id,
@@ -92,7 +91,42 @@ export default function Id({ product, cart, addToCart, delFromCart }) {
                     }}
                     className="fa fa-plus-circle mt-1"
                   ></span>
-                </div>
+                </div> */}
+                  <div className="row">
+                    <div className="col-lg-2">
+                      <div className="input-group">
+                        <span className="input-group-btn">
+                          <button
+                            type="button"
+                            className="quantity-left-minus btn btn-danger btn-number"
+                            data-type="minus"
+                            data-field=""
+                          >
+                            <span className="glyphicon glyphicon-minus"></span>
+                          </button>
+                        </span>
+                        <input
+                          type="text"
+                          id="quantity"
+                          name="quantity"
+                          className="form-control input-number"
+                          value="10"
+                          min="1"
+                          max="100"
+                        />
+                        <span className="input-group-btn">
+                          <button
+                            type="button"
+                            className="quantity-right-plus btn btn-success btn-number"
+                            data-type="plus"
+                            data-field=""
+                          >
+                            <span className="glyphicon glyphicon-plus"></span>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 <div className="share-desc mt-5">
                   <div className="share text-left">
                     <button
@@ -103,8 +137,9 @@ export default function Id({ product, cart, addToCart, delFromCart }) {
                           product.attributes.price,
                           product.attributes.name,
                           product.attributes.description,
-                          product.attributes?.images?.data?.attributes?.formats?.thumbnail?.url
-                        )
+                          product.attributes?.images?.data?.attributes?.formats
+                            ?.thumbnail?.url
+                        );
                       }}
                       className="btn btn-primary"
                     >

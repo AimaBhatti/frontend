@@ -90,7 +90,7 @@ export default function setProfile({user}) {
                     <label className="labels">Mobile Number</label>
                     <input
                       name="contact"
-                      type="number"
+                      type="text"
                       className="form-control"
                       placeholder={user.contact}
                       onChange={handleChange}

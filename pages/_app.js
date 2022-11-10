@@ -26,29 +26,30 @@ function MyApp({ Component, pageProps }) {
   }, [])
 
   const [cart, setCart] = useState({});
-  const [subTotal, setSubTotal] = useState(0);
+  const [total, setTotal] = useState(0.0);
   const [reloadKey, setReloadKey] = useState(1);
 
   const saveCart = (myCart) => {
     localStorage.setItem("cart", JSON.stringify(myCart))
-    let subTot=0;
+    let Tot = 0.0;
     let keys = Object.keys(myCart)
     for (let i = 0; i < keys.length; i++) {
-      subTot = subTot + myCart[keys[i]].price * myCart[keys[i]].qty
+      Tot += myCart[keys[i]].price * myCart[keys[i]].qty
     }
-    setSubTotal(subTot);
+    setTotal(Tot);
+    localStorage.setItem("Total", JSON.stringify(Tot))
   }
 
   const addToCart = (item, qty, price, name, description, image) => {
     let newCart = cart
+    let subTot = 0.0;
     if (item in cart) {
       newCart[item].qty = cart[item].qty + qty
     } else {
       newCart[item] = { qty: 1, price, name, description, image }
     }
-    // for (let index = 0; index < qty; index++) {
-    //   newCart.push([item]);
-    // }
+    subTot = newCart[item].qty * newCart[item].price;
+    newCart[item].subTotal = subTot;
     console.log(newCart)
     setCart(newCart)
     setReloadKey(Math.random())
@@ -57,14 +58,15 @@ function MyApp({ Component, pageProps }) {
 
   const delFromCart = (item, qty, price, name, description, image) => {
     let newCart = cart
+    let subTot = 0.0;
     if (item in cart) {
       newCart[item]["qty"] = cart[item].qty - qty;
+      subTot = newCart[item].qty * newCart[item].price;
+      newCart[item].subTotal = subTot;
     }
     if (newCart[item].qty <= 0) {
       delete newCart[item]
     }
-    // let index = newCart.indexOf(item);
-    // newCart.splice(index);
     setCart(newCart)
     saveCart(newCart)
   }
@@ -72,6 +74,7 @@ function MyApp({ Component, pageProps }) {
   const clearCart = () => {
     setCart({})
     saveCart({})
+    setTotal(0.0)
   }
 
   return (
@@ -82,14 +85,15 @@ function MyApp({ Component, pageProps }) {
       addToCart={addToCart}
       delFromCart={delFromCart}
       clearCart={clearCart}
-      subTotal={subTotal}
+      total={total}
     >
       <Component
+        rkey={reloadKey}
         cart={cart}
         addToCart={addToCart}
         delFromCart={delFromCart}
         clearCart={clearCart}
-        subTotal={subTotal}
+        total={total}
         {...pageProps}
       />
     </Layout>
