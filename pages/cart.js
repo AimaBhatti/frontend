@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useUser } from "../lib/authContext";
 import { fetcher } from "../lib/api";
-import { getTokenFromServerCookie } from '../lib/auth';
+import { getTokenFromServerCookie } from "../lib/auth";
 
 export async function getServerSideProps({ req }) {
-    const jwt = getTokenFromServerCookie(req);
-    let headers = { Authorization: `Bearer ${jwt}` }
-    let User = await fetcher(`http://localhost:1337/api/users/me`, { headers: headers });
-    return {
-      props: { User },
-    };
-  }
+  const jwt = getTokenFromServerCookie(req);
+  let headers = { Authorization: `Bearer ${jwt}` };
+  let User = await fetcher(`http://localhost:1337/api/users/me`, {
+    headers: headers,
+  });
+  return {
+    props: { User },
+  };
+}
 
 export default function cart({
   rkey,
@@ -21,9 +23,16 @@ export default function cart({
   delFromCart,
   clearCart,
   total,
-  User
+  User,
 }) {
+  const [payType, setPayType] = useState({
+    pay_type: "",
+  });
   const { user, loading } = useUser();
+
+  const handleChange = (e) => {
+    setPayType({ ...payType, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
     let total;
@@ -47,12 +56,15 @@ export default function cart({
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            order_Id: "456732",
-            user_Id: User.id,
-            grand_total: total,
+            data: {
+              user_id: User.username,
+              grand_total: localStorage.getItem("Total"),
+              pay_type: payType.pay_type,
+            },
           }),
         }
       );
+      console.log(order);
       console.log("Your order has been posted");
     } catch (error) {
       console.error(error);
@@ -171,38 +183,43 @@ export default function cart({
               </div>
               <form id="cart-form">
                 <p>SHIPPING</p>
-                <select>
-                  <option className="text-muted">
-                    Standard-Delivery- $ 5.00
-                  </option>
+                <select name="pay_type" onChange={handleChange}>
+                  <option className="text-muted">COD</option>
+                  <option className="text-muted">Stripe</option>
+                  <option className="text-muted">Easypaisa</option>
                 </select>
-              </form>
-              <div className="row">
-                <div className="col">TOTAL PRICE</div>
-                <div className="col text-right">$ {total + 5}</div>
-              </div>
-              <div className="content-input-field">
-                {!loading && user ? (
-                  <Link href="/checkout">
-                    <button typ="submit" onClick={handleSubmit} className="btn">
-                      CHECKOUT
-                    </button>
-                  </Link>
-                ) : (
-                  ""
-                )}
-                {!loading && !user ? (
-                  <Link href="/login">
-                    <button className="btn">CHECKOUT</button>
-                  </Link>
-                ) : (
-                  ""
-                )}
 
-                <button onClick={clearCart} className="btn mt-2">
-                  CLEAR CART
-                </button>
-              </div>
+                <div className="row">
+                  <div className="col">TOTAL PRICE</div>
+                  <div className="col text-right">$ {total + 5}</div>
+                </div>
+                <div className="content-input-field">
+                  {!loading && user ? (
+                    <Link href="/checkout">
+                      <button
+                        type="submit"
+                        onClick={handleSubmit}
+                        className="btn"
+                      >
+                        CHECKOUT
+                      </button>
+                    </Link>
+                  ) : (
+                    ""
+                  )}
+                  {!loading && !user ? (
+                    <Link href="/login">
+                      <button className="btn">CHECKOUT</button>
+                    </Link>
+                  ) : (
+                    ""
+                  )}
+
+                  <button onClick={clearCart} className="btn mt-2">
+                    CLEAR CART
+                  </button>
+                </div>
+              </form>
             </div>
           )}
         </div>

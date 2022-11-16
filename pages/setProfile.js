@@ -96,7 +96,7 @@ export default function setProfile({user}) {
                       onChange={handleChange}
                     />
                   </div>
-                  <div className="col-md-9">
+                  <div className="col-md-12">
                     <label className="labels">Email</label>
                     <input
                       name="email"

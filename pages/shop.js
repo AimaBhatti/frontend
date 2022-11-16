@@ -57,61 +57,64 @@ export default function shop({
                   {category.attributes.name}
                 </h3>
                 <div className="row shop-wthree-info text-center">
-                  {category.attributes.products.data.map((product) => (
-                    <div
-                      key={product.attributes.p_Id}
-                      className="col-lg-3 shop-info-grid text-center mt-4"
-                    >
-                      <div className="product-shoe-info shoe">
-                        <div className="men-thumb-item">
-                          <Link href={`/product/${product.attributes.p_Id}`}>
-                            <a>
-                              <img
-                                src={`http://localhost:1337${product.attributes?.images?.data?.attributes?.formats?.thumbnail?.url}`}
-                                width={250}
-                                height={250}
-                                className="img-fluid"
-                                alt=""
-                              />
-                            </a>
-                          </Link>
-                        </div>
-                        <div className="item-info-product">
-                          <h4>
-                            <Link href="/single">
-                              <a>{product.attributes.name}</a>
+                  {category.attributes.products.data.map((product) => {
+                    console.log(product);
+                    return (
+                      <div
+                        key={product.attributes.p_Id}
+                        className="col-lg-3 shop-info-grid text-center mt-4"
+                      >
+                        <div className="product-shoe-info shoe">
+                          <div className="men-thumb-item">
+                            <Link href={`/product/${product.attributes.p_Id}`}>
+                              <a>
+                                <img
+                                  src={`http://localhost:1337/uploads/${product.attributes?.image_name}`}
+                                  width={250}
+                                  height={250}
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </a>
                             </Link>
-                          </h4>
-                          <div className="product_price">
-                            <div className="grid-price">
-                              <span className="money">
-                                ${product.attributes.price}
-                              </span>
-                            </div>
                           </div>
-                          <button
-                            // onClick={() => {
-                            //   addToCart(
-                            //     product.attributes.p_Id,
-                            //     1,
-                            //     product.attributes.price,
-                            //     product.attributes.name,
-                            //     product.attributes.description,
-                            //     product.attributes?.images?.data?.attributes?.formats?.thumbnail?.url
-                            //   );
-                            // }}
-                            className="btn btn-success mt-1"
-                          >
-                            Add to Cart{" "}
-                            <span
-                              className="fa fa-shopping-bag"
-                              aria-hidden="true"
-                            ></span>
-                          </button>
+                          <div className="item-info-product">
+                            <h4>
+                              <Link href="/single">
+                                <a>{product.attributes.name}</a>
+                              </Link>
+                            </h4>
+                            <div className="product_price">
+                              <div className="grid-price">
+                                <span className="money">
+                                  ${product.attributes.price}
+                                </span>
+                              </div>
+                            </div>
+                            <button
+                              // onClick={() => {
+                              //   addToCart(
+                              //     product.attributes.p_Id,
+                              //     1,
+                              //     product.attributes.price,
+                              //     product.attributes.name,
+                              //     product.attributes.description,
+                              //     product.attributes?.images?.data?.attributes?.formats?.thumbnail?.url
+                              //   );
+                              // }}
+                              className="btn btn-success mt-1"
+                            >
+                              Add to Cart{" "}
+                              <span
+                                className="fa fa-shopping-bag"
+                                aria-hidden="true"
+                              ></span>
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             ))}
