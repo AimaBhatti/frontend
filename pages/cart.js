@@ -184,6 +184,7 @@ export default function cart({
               <form id="cart-form">
                 <p>SHIPPING</p>
                 <select name="pay_type" onChange={handleChange}>
+                  <option className="text-muted" readOnly>Choose Here</option>
                   <option className="text-muted">COD</option>
                   <option className="text-muted">Stripe</option>
                   <option className="text-muted">Easypaisa</option>
