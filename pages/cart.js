@@ -76,9 +76,12 @@ export default function cart({
           },
           body: JSON.stringify({
             data: {
-              user_id: User.id,
               grand_total: localStorage.getItem("Total"),
               pay_type: payType,
+              user_id: User.id,
+              username: User.username,
+              contact: User.contact,
+              address: User.address,
             },
           }),
         }
@@ -116,24 +119,24 @@ export default function cart({
       }
 
       // Send Email to User
-      const Email1 = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/emails`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json"},
-        body: JSON.stringify({
-          email: User.email
-        }),
-      });
-      console.log("email sent to user");
+      // const Email1 = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/emails`, {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json"},
+      //   body: JSON.stringify({
+      //     email: User.email
+      //   }),
+      // });
+      // console.log("email sent to user");
 
       // Send Email to Admin
-      const Email2 = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/emails`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: "baggage820@gmail.com"
-        }),
-      });
-      console.log("email sent to admin");
+      // const Email2 = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/emails`, {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({
+      //     email: "baggage820@gmail.com"
+      //   }),
+      // });
+      // console.log("email sent to admin");
 
       clearCart()
       
@@ -273,7 +276,7 @@ export default function cart({
                 </div>
                 <div className="content-input-field">
                   {!loading && user ? (
-                    <Link href="/checkout">
+                    <Link href="/">
                       <button
                         type="submit"
                         onClick={handleSubmit}

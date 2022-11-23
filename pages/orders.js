@@ -2,22 +2,23 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { fetcher } from "../lib/api";
-import { getTokenFromServerCookie } from "../lib/auth";
+import { getTokenFromServerCookie, getNameFromServerCookie } from "../lib/auth";
 
-export async function getServerSideProps( req ) {
+export async function getServerSideProps({ req }) {
+  const name = getNameFromServerCookie(req);
   const jwt = getTokenFromServerCookie(req);
-  const Orders = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/orders`,
-  {
+  const Orders = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/orders?filters[username]=${name}`, {
     headers: {
-      authorization: `Bearer ${jwt}`
+      authorization: `Bearer ${jwt}`,
     },
-  })
+  });
+
   return {
-    props: Orders
+    props: { Orders },
   };
 }
 
-export default function orders( Orders ) {
+export default function orders({ Orders }) {
   return (
     <>
       <Head>
@@ -33,33 +34,27 @@ export default function orders( Orders ) {
 
       <div className="card">
         <table className="table table-hover">
+          {/* add no order condition */}
           <thead className="thead-dark">
             <tr>
-              {/* <th scope="col">#</th> */}
-              {/* <th scope="col">Date</th> */}
+              <th scope="col">Order Id</th>
+              <th scope="col">Bill</th>
               <th scope="col">Status</th>
               <th scope="col">Payment Method</th>
-              <th scope="col">Bill</th>
             </tr>
           </thead>
           <tbody>
-            {Orders && 
+            {Orders &&
               Orders.data.map((Order) => {
                 return (
-                  <div key={Order.id}>
-                  {/* // <td>{Order.createdAt}</td> */}
-                  <td>{Order.status}</td>
-                  <td>{Order.pay_type}</td>
-                  <td>{Order.grand_total}</td>
-                  </div>
-                )
-              } )}
-            {/* <tr> */}
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            {/* </tr> */}
+                  <tr key={Order.id}>
+                    <th scope="row">{Order.id}</th>
+                    <td>{Order.attributes.grand_total}</td>
+                    <td>{Order.attributes.status}</td>
+                    <td>{Order.attributes.pay_type}</td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
       </div>
