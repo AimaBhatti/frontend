@@ -66,6 +66,7 @@ export default function Home({ products, addToCart }) {
                         onClick={() => {
                           addToCart(
                             product.attributes.p_Id,
+                            product.id,
                             1,
                             product.attributes.price,
                             product.attributes.name,

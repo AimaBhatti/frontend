@@ -4,11 +4,12 @@ import Image from 'next/image'
 import { useUser } from '../lib/authContext';
 import { unsetToken } from '../lib/auth';
 
-export default function Header({ cart }) {
+export default function Header({ cart, clearCart }) {
 	
   const { user, loading } = useUser();
 
   const logout = () => {
+    clearCart()
     unsetToken();
     Swal.fire("Goodbye!", "You have signed out successfully!", "success");
   };
@@ -57,6 +58,12 @@ export default function Header({ cart }) {
               {!loading &&
                 (user ? (
                   <>
+                    <Link href="/orders">
+                      <a className="btn">
+                        <span className="fa fa-clipboard"></span> My Orders
+                      </a>
+                    </Link>
+
                     <Link href="/profile">
                       <a className="btn">
                         <span className="fa fa-user-circle-o"></span> Profile
@@ -90,7 +97,11 @@ export default function Header({ cart }) {
                 <li>
                   <Link href="/cart">
                     <a>
-                      Cart({Object.keys(cart).length}) <span className="fa fa-shopping-bag" aria-hidden="true"></span>
+                      Cart({Object.keys(cart).length}){" "}
+                      <span
+                        className="fa fa-shopping-bag"
+                        aria-hidden="true"
+                      ></span>
                     </a>
                   </Link>
                 </li>

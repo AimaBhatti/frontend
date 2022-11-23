@@ -95,6 +95,7 @@ export default function shop({
                               // onClick={() => {
                               //   addToCart(
                               //     product.attributes.p_Id,
+                              //     product.id
                               //     1,
                               //     product.attributes.price,
                               //     product.attributes.name,
@@ -153,6 +154,7 @@ export default function shop({
                         onClick={() => {
                           addToCart(
                             totebag.attributes.p_Id,
+                            totebag.id,
                             1,
                             totebag.attributes.price,
                             totebag.attributes.name,
@@ -210,6 +212,7 @@ export default function shop({
                           onClick={() => {
                             addToCart(
                               totebag.attributes.p_Id,
+                              totebag.id,
                               1,
                               totebag.attributes.price,
                               totebag.attributes.name,
@@ -269,6 +272,7 @@ export default function shop({
                           onClick={() => {
                             addToCart(
                               handbag.attributes.p_Id,
+                              handbag.id,
                               1,
                               handbag.attributes.price,
                               handbag.attributes.name,
@@ -328,6 +332,7 @@ export default function shop({
                           onClick={() => {
                             addToCart(
                               crossbodybag.attributes.p_Id,
+                              crossbodybag.id,
                               1,
                               crossbodybag.attributes.price,
                               crossbodybag.attributes.name,
@@ -386,6 +391,7 @@ export default function shop({
                           onClick={() => {
                             addToCart(
                               laptopbag.attributes.p_Id,
+                              laptopbag.id,
                               1,
                               laptopbag.attributes.price,
                               laptopbag.attributes.name,

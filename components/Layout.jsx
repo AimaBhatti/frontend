@@ -17,7 +17,7 @@ import { UserProvider } from '../lib/authContext'
     }) {
       return (
         <UserProvider value={{ user, loading }}>
-          <Header cart={cart} />
+          <Header cart={cart} clearCart={clearCart} />
           {children}
           <ShippingBanner />
           <Footer />

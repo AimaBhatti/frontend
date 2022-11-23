@@ -5,16 +5,32 @@ import { useUser } from "../lib/authContext";
 import { fetcher } from "../lib/api";
 import { getTokenFromServerCookie } from "../lib/auth";
 
-export async function getServerSideProps({ req }) {
-  const jwt = getTokenFromServerCookie(req);
-  let headers = { Authorization: `Bearer ${jwt}` };
-  let User = await fetcher(`http://localhost:1337/api/users/me`, {
-    headers: headers,
-  });
-  return {
-    props: { User },
-  };
-}
+
+  export async function getServerSideProps({ req }) {
+    let token=null
+    const jwt = getTokenFromServerCookie(req);
+    const User = await fetcher(
+      `${process.env.NEXT_PUBLIC_STRAPI_URL}/users/me`,
+      {
+        headers: {
+          authorization: `Bearer ${jwt}`,
+        },
+      }
+    );
+
+    if (jwt) {
+      return {
+        props: { jwt, User },
+      };
+    } else { 
+      return {
+        props: { token },
+      };  
+    }
+   
+  }
+
+
 
 export default function cart({
   rkey,
@@ -23,7 +39,8 @@ export default function cart({
   delFromCart,
   clearCart,
   total,
-  User,
+  jwt,
+  User
 }) {
   const [payType, setPayType] = useState({
     pay_type: "",
@@ -31,15 +48,18 @@ export default function cart({
   const { user, loading } = useUser();
 
   const handleChange = (e) => {
-    setPayType({ ...payType, [e.target.name]: e.target.value });
+    setPayType(e.target.value);
   };
 
   const handleSubmit = async (e) => {
     let total;
+    let gtotal;
+    let keys = Object.keys(cart);
     try {
       if (typeof window !== undefined) {
         total = JSON.parse(localStorage.getItem("Total"));
-        console.log(total);
+        gtotal = total + 5;
+        console.log(gtotal);
       }
     } catch (error) {
       console.error(error);
@@ -51,21 +71,72 @@ export default function cart({
         {
           method: "POST",
           headers: {
-            Authorizartion:
-              "Bearer fd7b5bf69051e9709b300391ba36acabc097212ddbe385ab56624377b1335092aedf28e61e1c63d7fc8c5adcc9d2e40504892b2d50cc224b1c81b85c6ae085396b7f4d44a894b525a683ceb68d7f34f9c97a5eeb7f2aea20f2ec4810a82a1c0d2161d004660c2be5621dca1f7dfee7663f6579f0acb9646a6d105bce0d9bef2f",
+            authorization: `Bearer ${jwt}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
             data: {
-              user_id: User.username,
+              user_id: User.id,
               grand_total: localStorage.getItem("Total"),
-              pay_type: payType.pay_type,
+              pay_type: payType,
             },
           }),
         }
       );
       console.log(order);
       console.log("Your order has been posted");
+
+      // Order Details Post Request
+      for (let i = 0; i < keys.length; i++) {
+        try {
+          const order_detail = await fetcher(
+            `${process.env.NEXT_PUBLIC_STRAPI_URL}/order-details`,
+            {
+              method: "POST",
+              headers: {
+                authorization: `Bearer ${jwt}`,
+                "Content-Type": "application/json",
+              },
+
+              body: JSON.stringify({
+                data: {
+                  order_id: order.data.id,
+                  products: cart[keys[i]].id,
+                  quantity: cart[keys[i]].qty,
+                  subTotal: cart[keys[i]].subTotal,
+                },
+              }),
+            }
+          );
+          console.log(order_detail);
+          console.log("Your order details has been posted");
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      // Send Email to User
+      const Email1 = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/emails`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify({
+          email: User.email
+        }),
+      });
+      console.log("email sent to user");
+
+      // Send Email to Admin
+      const Email2 = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/emails`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: "baggage820@gmail.com"
+        }),
+      });
+      console.log("email sent to admin");
+
+      clearCart()
+      
     } catch (error) {
       console.error(error);
     }
@@ -93,9 +164,9 @@ export default function cart({
                     <b className="bold">Shopping Cart</b>
                   </h4>
                 </div>
-                {/* <div className="col align-self-center text-right text-muted">
-                  3 items
-                </div> */}
+                <div className="col align-self-center text-right text-muted">
+                  {Object.keys(cart).length} items
+                </div>
               </div>
             </div>
             {Object.keys(cart).length == 0 && (
@@ -131,6 +202,7 @@ export default function cart({
                             onClick={() => {
                               delFromCart(
                                 item,
+                                cart[item].id,
                                 1,
                                 cart[item].price,
                                 cart[item].name,
@@ -145,6 +217,7 @@ export default function cart({
                             onClick={() => {
                               addToCart(
                                 item,
+                                cart[item].id,
                                 1,
                                 cart[item].price,
                                 cart[item].name,
@@ -179,12 +252,14 @@ export default function cart({
               <hr></hr>
               <div className="row">
                 <div className="col">TOTAL</div>
-                <div className="col text-right">$ {total}</div>
+                <div className="col text-right">
+                  $ {localStorage.getItem("Total")}
+                </div>
               </div>
               <form id="cart-form">
                 <p>SHIPPING</p>
                 <select name="pay_type" onChange={handleChange}>
-                  <option className="text-muted" readOnly>Choose Here</option>
+                  <option className="text-muted">Choose Here</option>
                   <option className="text-muted">COD</option>
                   <option className="text-muted">Stripe</option>
                   <option className="text-muted">Easypaisa</option>
@@ -192,7 +267,9 @@ export default function cart({
 
                 <div className="row">
                   <div className="col">TOTAL PRICE</div>
-                  <div className="col text-right">$ {total + 5}</div>
+                  <div className="col text-right">
+                    $ {localStorage.getItem("Total")}
+                  </div>
                 </div>
                 <div className="content-input-field">
                   {!loading && user ? (
