@@ -2,10 +2,12 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import { setToken } from "../lib/auth";
 import { fetcher } from "../lib/api";
+import { useUser } from "../lib/authContext";
 
 export default function Register() {
+
+  const { login } = useUser();
   const [data, setData] = useState({
     username: "",
     email: "",
@@ -58,11 +60,14 @@ export default function Register() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: data.email,
+          data: {
+            email: data.email,
+            type: 'confirmation'
+          },
         }),
       });
-      console.log(emailRes);
-      setToken(responseData);
+      // console.log(emailRes);
+      login(responseData);
       Swal.fire("Authentication", "Please check your email to register yourself", "success");
     } catch (error) {
       console.error(error);

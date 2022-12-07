@@ -58,7 +58,6 @@ export default function shop({
                 </h3>
                 <div className="row shop-wthree-info text-center">
                   {category.attributes.products.data.map((product) => {
-                    console.log(product);
                     return (
                       <div
                         key={product.attributes.p_Id}
@@ -69,7 +68,7 @@ export default function shop({
                             <Link href={`/product/${product.attributes.p_Id}`}>
                               <a>
                                 <img
-                                  src={`http://localhost:1337/uploads/${product.attributes?.image_name}`}
+                                  src={`https://res.cloudinary.com/ddtl1keoc/image/upload/v1670349403/${product.attributes?.images?.data?.attributes?.formats?.thumbnail?.url}`}
                                   width={250}
                                   height={250}
                                   className="img-fluid"

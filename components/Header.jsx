@@ -1,18 +1,16 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { useUser } from '../lib/authContext';
-import { unsetToken } from '../lib/auth';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { useUser } from "../lib/authContext";
 
 export default function Header({ cart, clearCart }) {
-	
-  const { user, loading } = useUser();
+  const { user, loading, logout } = useUser();
 
-  const logout = () => {
-    clearCart()
-    unsetToken();
-    Swal.fire("Goodbye!", "You have signed out successfully!", "success");
-  };
+  // const logout = () => {
+  //   clearCart()
+  //   unsetToken()
+  //   Swal.fire("Goodbye!", "You have signed out successfully!", "success");
+  // };
 
   return (
     <div className="main-sec inner-page">
@@ -37,7 +35,7 @@ export default function Header({ cart, clearCart }) {
             </div>
 
             <div className="forms ml-auto">
-              {!loading && !user ? (
+              {!loading && !user.id ? (
                 <>
                   <Link href="/login">
                     <a className="btn">
@@ -56,7 +54,7 @@ export default function Header({ cart, clearCart }) {
               )}
 
               {!loading &&
-                (user ? (
+                (user.id ? (
                   <>
                     <Link href="/orders">
                       <a className="btn">

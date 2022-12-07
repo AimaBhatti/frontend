@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 import { fetcher } from "../lib/api";
-import { setToken } from "../lib/auth";
+import { useUser } from "../lib/authContext";
 
 export default function Login() {
   const [data, setData] = useState({
@@ -12,6 +12,7 @@ export default function Login() {
   });
   const [errors, setErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const {login} = useUser()
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -36,7 +37,8 @@ export default function Login() {
           }),
         }
       );
-      setToken(responseData);
+      login(responseData)
+      // setToken(responseData)
       Swal.fire("Welcome!", "You have signed in successfully!", "success");
     } catch (error) {
       console.log(error);

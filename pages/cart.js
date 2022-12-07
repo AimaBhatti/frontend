@@ -5,32 +5,25 @@ import { useUser } from "../lib/authContext";
 import { fetcher } from "../lib/api";
 import { getTokenFromServerCookie } from "../lib/auth";
 
+export async function getServerSideProps({ req }) {
+  let token = null;
+  const jwt = getTokenFromServerCookie(req);
+  const User = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/users/me`, {
+    headers: {
+      authorization: `Bearer ${jwt}`,
+    },
+  });
 
-  export async function getServerSideProps({ req }) {
-    let token=null
-    const jwt = getTokenFromServerCookie(req);
-    const User = await fetcher(
-      `${process.env.NEXT_PUBLIC_STRAPI_URL}/users/me`,
-      {
-        headers: {
-          authorization: `Bearer ${jwt}`,
-        },
-      }
-    );
-
-    if (jwt) {
-      return {
-        props: { jwt, User },
-      };
-    } else { 
-      return {
-        props: { token },
-      };  
-    }
-   
+  if (jwt) {
+    return {
+      props: { jwt, User },
+    };
+  } else {
+    return {
+      props: { token },
+    };
   }
-
-
+}
 
 export default function cart({
   rkey,
@@ -40,7 +33,7 @@ export default function cart({
   clearCart,
   total,
   jwt,
-  User
+  User,
 }) {
   const [payType, setPayType] = useState({
     pay_type: "",
@@ -119,27 +112,38 @@ export default function cart({
       }
 
       // Send Email to User
-      // const Email1 = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/emails`, {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json"},
-      //   body: JSON.stringify({
-      //     email: User.email
-      //   }),
-      // });
-      // console.log("email sent to user");
+      const Email1 = await fetcher(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/emails`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            data: {
+              email: User.email,
+              type: 'order'
+            },
+          }),
+        }
+      );
+      console.log("email sent to user");
 
       // Send Email to Admin
-      // const Email2 = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/emails`, {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({
-      //     email: "baggage820@gmail.com"
-      //   }),
-      // });
-      // console.log("email sent to admin");
+      const Email2 = await fetcher(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/emails`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            data: {
+              email: "baggage820@gmail.com",
+              type: 'new-order'
+            },
+          }),
+        }
+      );
+      console.log("email sent to admin");
 
-      clearCart()
-      
+      clearCart();
     } catch (error) {
       console.error(error);
     }
@@ -264,8 +268,6 @@ export default function cart({
                 <select name="pay_type" onChange={handleChange}>
                   <option className="text-muted">Choose Here</option>
                   <option className="text-muted">COD</option>
-                  <option className="text-muted">Stripe</option>
-                  <option className="text-muted">Easypaisa</option>
                 </select>
 
                 <div className="row">
@@ -275,7 +277,7 @@ export default function cart({
                   </div>
                 </div>
                 <div className="content-input-field">
-                  {!loading && user ? (
+                  {!loading && user.id ? (
                     <Link href="/">
                       <button
                         type="submit"
@@ -288,7 +290,7 @@ export default function cart({
                   ) : (
                     ""
                   )}
-                  {!loading && !user ? (
+                  {!loading && !user.id ? (
                     <Link href="/login">
                       <button className="btn">CHECKOUT</button>
                     </Link>
