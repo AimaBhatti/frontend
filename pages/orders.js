@@ -9,7 +9,7 @@ export async function getServerSideProps({ req }) {
   const name = getNameFromServerCookie(req);
   const jwt = getTokenFromServerCookie(req);
   const Orders = await fetcher(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/orders?filters[username]=${name}`,
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/orders?filters[username][$eq]=${name}`,
     {
       headers: {
         authorization: `Bearer ${jwt}`,
@@ -23,7 +23,7 @@ export async function getServerSideProps({ req }) {
 }
 
 export default function orders({ Orders }) {
-   const { user, loading } = useUser();
+  const { user, loading } = useUser();
 
   return (
     <>
@@ -55,7 +55,7 @@ export default function orders({ Orders }) {
             <li className="breadcrumb-item active">Order History</li>
           </ol>
 
-          {!Orders ? (
+          {!Orders.results.length > 0 ? (
             <div className="card mycard">No Order History!</div>
           ) : (
             <>
@@ -70,38 +70,37 @@ export default function orders({ Orders }) {
                     </tr>
                   </thead>
                   <tbody>
-                    {Orders &&
-                      Orders.data.map((Order) => {
-                        return (
-                          <tr key={Order.id}>
-                            <th scope="row">{Order.id}</th>
-                            <td>{Order.attributes.grand_total}</td>
-                            <td>
-                              {Order.attributes.status === "In Process" && (
-                                <span className="text-primary">
-                                  {Order.attributes.status}
-                                </span>
-                              )}
-                              {Order.attributes.status === "Shipped" && (
-                                <span className="text-warning">
-                                  {Order.attributes.status}
-                                </span>
-                              )}
-                              {Order.attributes.status === "Completed" && (
-                                <span className="text-success">
-                                  {Order.attributes.status}
-                                </span>
-                              )}
-                              {Order.attributes.status === "Cancelled" && (
-                                <span className="text-danger">
-                                  {Order.attributes.status}
-                                </span>
-                              )}
-                            </td>
-                            <td>{Order.attributes.pay_type}</td>
-                          </tr>
-                        );
-                      })}
+                    {Orders.results?.map((Order) => {
+                      return (
+                        <tr key={Order.id}>
+                          <th scope="row">{Order.id}</th>
+                          <td>{Order?.grand_total}</td>
+                          <td>
+                            {Order?.status === "In Process" && (
+                              <span className="text-primary">
+                                {Order?.status}
+                              </span>
+                            )}
+                            {Order?.status === "Shipped" && (
+                              <span className="text-warning">
+                                {Order?.status}
+                              </span>
+                            )}
+                            {Order?.status === "Completed" && (
+                              <span className="text-success">
+                                {Order?.status}
+                              </span>
+                            )}
+                            {Order?.status === "Cancelled" && (
+                              <span className="text-danger">
+                                {Order?.status}
+                              </span>
+                            )}
+                          </td>
+                          <td>{Order?.pay_type}</td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>
