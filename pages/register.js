@@ -6,7 +6,6 @@ import { fetcher } from "../lib/api";
 import { useUser } from "../lib/authContext";
 
 export default function Register() {
-
   const { login } = useUser();
   const [data, setData] = useState({
     username: "",
@@ -22,6 +21,7 @@ export default function Register() {
   });
   const [errors, setErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -54,6 +54,25 @@ export default function Register() {
           }),
         }
       );
+      if (responseData.error) {
+        setSubmitError(responseData.error.message);
+        Swal.fire({
+          icon: "error",
+          text: responseData.error.message
+        });
+        return;
+      }
+      else {
+        // login(responseData);
+        Swal.fire(
+          "Authentication",
+          "Please check your email to register yourself",
+          "success"
+        );
+      }
+    } catch (error) {}
+
+    try {
       const emailRes = await fetcher(`http://localhost:1337/api/emails`, {
         method: "POST",
         headers: {
@@ -62,15 +81,16 @@ export default function Register() {
         body: JSON.stringify({
           data: {
             email: data.email,
-            type: 'confirmation'
+            type: "confirmation",
           },
         }),
       });
-      // console.log(emailRes);
-      login(responseData);
-      Swal.fire("Authentication", "Please check your email to register yourself", "success");
     } catch (error) {
-      console.error(error);
+       Swal.fire({
+         icon: "error",
+         text: emailRes.error.message,
+       });
+      return;
     }
   };
 
@@ -114,7 +134,7 @@ export default function Register() {
   return (
     <>
       <Head>
-        <title>Baggage | Login</title>
+        <title>Baggage | Register</title>
       </Head>
       <ol className="breadcrumb">
         <li className="breadcrumb-item">
@@ -150,6 +170,7 @@ export default function Register() {
                       className="form-control"
                       onChange={handleChange}
                     >
+                      <option>Choose Here</option>
                       <option>Male</option>
                       <option>Female</option>
                     </select>
@@ -241,6 +262,7 @@ export default function Register() {
                     <p className="text-danger mb-2">{errors.country}</p>
                   </div>
                 </div>
+                {/* {submitError} */}
 
                 <div className="mt-5 text-center">
                   <button

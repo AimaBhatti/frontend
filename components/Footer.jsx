@@ -20,25 +20,17 @@ export default function Footer() {
                                     <Link href="/about"><a><span className="fa fa-angle-right" aria-hidden="true"></span> About</a></Link>
                                 </li>
                                 <li>
-                                    <Link href="/shop"><a><span className="fa fa-angle-right" aria-hidden="true"></span> Collections</a></Link>
+                                    <Link href="/shop"><a><span className="fa fa-angle-right" aria-hidden="true"></span> Shop</a></Link>
                                 </li>
-                                <li>
-                                    <Link href="/single"><a><span className="fa fa-angle-right" aria-hidden="true"></span> Single</a></Link>
-                                </li>
-
                             </ul>
                         </div>
                         <div className="col-lg-3 footer_wthree_gridf mt-md-0 mt-sm-4 mt-3">
                             <ul className="footer_wthree_gridf_list">
                                 <li>
-                                    <Link href="/single"><a><span className="fa fa-angle-right" aria-hidden="true"></span> Extra Page</a></Link>
-                                </li>
-
-                                <li>
-                                    <Link href="#"><a><span className="fa fa-angle-right" aria-hidden="true"></span> Terms & Conditions</a></Link>
+                                    <Link href="/refunds"><a><span className="fa fa-angle-right" aria-hidden="true"></span> Returns & Refunds</a></Link>
                                 </li>
                                 <li>
-                                    <Link href="/single"><a><span className="fa fa-angle-right" aria-hidden="true"></span> Shop Single</a></Link>
+                                    <Link href="/policy"><a><span className="fa fa-angle-right" aria-hidden="true"></span> Privacy Policy</a></Link>
                                 </li>
                                 <li>
                                     <Link href="/contact"><a><span className="fa fa-angle-right" aria-hidden="true"></span> Contact Us</a></Link>
@@ -53,12 +45,8 @@ export default function Footer() {
                                 </li>
 
                                 <li>
-                                    <Link href="/register"><a><span className="fa fa-angle-right" aria-hidden="true"></span>Register</a></Link>
+                                    <Link href="/register"><a><span className="fa fa-angle-right" aria-hidden="true"></span> Register</a></Link>
                                 </li>
-                                <li>
-                                    <Link href="#"><a><span className="fa fa-angle-right" aria-hidden="true"></span>Privacy & Policy</a></Link>
-                                </li>
-
                             </ul>
                         </div>
                     </div>
@@ -69,7 +57,7 @@ export default function Footer() {
                             <ul>
                                 <li><Link href="#"><a><span className="fa fa-facebook"></span> Facebook</a></Link></li>
                                 <li><Link href="#"><a><span className="fa fa-twitter"></span> Twitter</a></Link></li>
-                                <li><Link href="#"><a><span className="fa fa-google"></span>Google</a></Link></li>
+                                <li><Link href="#"><a><span className="fa fa-google"></span> Google</a></Link></li>
                             </ul>
                         </div>
                     </div>

@@ -1,16 +1,20 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useState } from "react";
 import { useUser } from "../lib/authContext";
 
 export default function Header({ cart, clearCart }) {
   const { user, loading, logout } = useUser();
 
-  // const logout = () => {
-  //   clearCart()
-  //   unsetToken()
-  //   Swal.fire("Goodbye!", "You have signed out successfully!", "success");
-  // };
+  const [query, setQuery] = useState("");
+
+  const router = useRouter();
+  const submitHandler = (e) => {
+    e.preventDefault();
+    router.push(`/search?query=${query}`);
+  };
 
   return (
     <div className="main-sec inner-page">
@@ -38,13 +42,13 @@ export default function Header({ cart, clearCart }) {
               {!loading && !user.id ? (
                 <>
                   <Link href="/login">
-                    <a className="btn">
+                    <a className="btn text-secondary">
                       <span className="fa fa-sign-in"></span> Sign In
                     </a>
                   </Link>
 
                   <Link href="/register">
-                    <a className="btn">
+                    <a className="btn text-secondary">
                       <span className="fa fa-pencil-square-o"></span> Sign Up
                     </a>
                   </Link>
@@ -57,18 +61,18 @@ export default function Header({ cart, clearCart }) {
                 (user.id ? (
                   <>
                     <Link href="/orders">
-                      <a className="btn">
+                      <a className="btn text-secondary">
                         <span className="fa fa-clipboard"></span> My Orders
                       </a>
                     </Link>
 
                     <Link href="/profile">
-                      <a className="btn">
+                      <a className="btn text-secondary">
                         <span className="fa fa-user-circle-o"></span> Profile
                       </a>
                     </Link>
 
-                    <a className="btn" onClick={logout}>
+                    <a className="btn text-secondary" onClick={logout}>
                       <span className="fa fa-sign-out"></span> Sign Out
                     </a>
                   </>
@@ -114,14 +118,14 @@ export default function Header({ cart, clearCart }) {
             {/* <!-- //nav --> */}
             <div className="search-form ml-auto">
               <div className="form-w3layouts-grid">
-                <form action="#" method="post" className="newsletter">
+                <form onSubmit={submitHandler} className="newsletter">
                   <input
                     className="search"
-                    type="search"
+                    type="text"
                     placeholder="Search here..."
-                    required=""
+                    onChange={(e) => setQuery(e.target.value)}
                   />
-                  <button className="form-control btn" value="">
+                  <button className="form-control btn" type="submit">
                     <span className="fa fa-search"></span>
                   </button>
                 </form>

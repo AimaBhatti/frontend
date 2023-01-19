@@ -79,8 +79,8 @@ export default function cart({
           }),
         }
       );
-      console.log(order);
-      console.log("Your order has been posted");
+      // console.log(order);
+      // console.log("Your order has been posted");
 
       // Order Details Post Request
       for (let i = 0; i < keys.length; i++) {
@@ -104,8 +104,8 @@ export default function cart({
               }),
             }
           );
-          console.log(order_detail);
-          console.log("Your order details has been posted");
+          // console.log(order_detail);
+          // console.log("Your order details has been posted");
         } catch (error) {
           console.error(error);
         }
@@ -142,7 +142,7 @@ export default function cart({
         }
       );
       console.log("email sent to admin");
-
+      Swal.fire("Thank You!", "For shopping from us.", "success");
       clearCart();
     } catch (error) {
       console.error(error);
@@ -193,15 +193,16 @@ export default function cart({
                           width="250px"
                           height="250px"
                           className="img-fluid"
-                          src={`http://localhost:1337${cart[item].image}`}
+                          src={`${cart[item].image}`}
                           alt=""
                         />
                       </div>
                       <div className="col">
-                        <div className="row text-bold mt-1">
-                          {cart[item].name}
+                        <div className="row mt-1">
+                          <h5 className=" upcase text-danger">
+                            {cart[item].name}
+                          </h5>
                         </div>
-                        <div className="row">{cart[item].description}</div>
                       </div>
                       <div className="col m-auto offset-3">
                         <div className="row">
@@ -213,13 +214,14 @@ export default function cart({
                                 1,
                                 cart[item].price,
                                 cart[item].name,
-                                cart[item].description,
                                 cart[item].image
                               );
                             }}
                             className="fa fa-minus-circle mt-1 offset-2"
                           ></span>
-                          <span className="mx-2">{cart[item].qty}</span>
+                          <span className="mx-2 text-secondary">
+                            {cart[item].qty}
+                          </span>
                           <span
                             onClick={() => {
                               addToCart(
@@ -228,7 +230,6 @@ export default function cart({
                                 1,
                                 cart[item].price,
                                 cart[item].name,
-                                cart[item].description,
                                 cart[item].image
                               );
                             }}
@@ -236,7 +237,9 @@ export default function cart({
                           ></span>
                         </div>
                       </div>
-                      <div className="col my-auto">$ {cart[item].subTotal}</div>
+                      <div className="col my-auto text-secondary">
+                        {cart[item].subTotal} PKR
+                      </div>
                       {/* <span className="fa fa-close my-auto"></span> */}
                     </div>
                   </li>
@@ -257,14 +260,8 @@ export default function cart({
                 <h5>Summary</h5>
               </div>
               <hr></hr>
-              <div className="row">
-                <div className="col">TOTAL</div>
-                <div className="col text-right">
-                  $ {localStorage.getItem("Total")}
-                </div>
-              </div>
               <form id="cart-form">
-                <p>SHIPPING</p>
+                <p>PAYMENT METHOD</p>
                 <select name="pay_type" onChange={handleChange}>
                   <option className="text-muted">Choose Here</option>
                   <option className="text-muted">COD</option>
@@ -273,7 +270,7 @@ export default function cart({
                 <div className="row">
                   <div className="col">TOTAL PRICE</div>
                   <div className="col text-right">
-                    $ {localStorage.getItem("Total")}
+                    {localStorage.getItem("Total")} PKR
                   </div>
                 </div>
                 <div className="content-input-field">
